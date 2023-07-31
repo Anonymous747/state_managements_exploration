@@ -1,3 +1,4 @@
+import 'package:bloc_template/bloc_template.dart';
 import 'package:flutter/material.dart';
 import 'package:state_managements_exploration/common/utils/container.dart';
 
@@ -62,6 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    Calculator calc = Calculator();
+    calc.addOne(1);
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below

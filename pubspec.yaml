@@ -8,6 +8,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  bloc_template:
+    path: ./templates/bloc_template
+  ui_kit:
+    path: ./templates/ui_kit
+
   cupertino_icons: ^1.0.2
   get_it: ^7.6.0
 

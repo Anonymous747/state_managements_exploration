@@ -4,9 +4,31 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/common/utils/container.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/state_managements/bloc/view/preview_screen.dart" afterDir="false" />
+    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Packages setup">
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/android/local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/bloc_template.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/ios/Runner/GeneratedPluginRegistrant.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/lib/bloc_template.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/pubspec.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/test/bloc_template_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/ios/Runner/GeneratedPluginRegistrant.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/ui_kit.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/pubspec.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/test/ui_kit_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/ui_kit.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
@@ -47,6 +69,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\lib\common\utils" />
     </key>
   </component>
@@ -59,6 +82,14 @@
       <option name="presentableId" value="Default" />
       <updated>1690731693873</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial blueprint">
+      <created>1690821125534</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690821125534</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -77,5 +108,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial blueprint" />
+    <MESSAGE value="Packages setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Packages setup" />
   </component>
 </project>
