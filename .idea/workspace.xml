@@ -9,25 +9,25 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Packages setup">
-      <change afterPath="$PROJECT_DIR$/lib/screens/select_management_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/common.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/typography/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/typography/palette.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/typography/text_styles.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/utils/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/utils/navigation.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/components.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/preview_container.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/buttons/flat_button.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/buttons/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/index.dart" afterDir="false" />
+    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Base model configuring and concept definition">
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/preview_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/android/local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/assets/koala.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_model.freezed.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_model.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state_managements_exploration.iml" beforeDir="false" afterPath="$PROJECT_DIR$/state_managements_exploration.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/test/bloc_template_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/ui_kit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/ui_kit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/test/ui_kit_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/bloc_template.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/bloc_template.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/components.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/components.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/preview_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/preview_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,12 +57,15 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\assets" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\common\typography" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\lib\common\utils" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\common\utils" />
@@ -92,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690822862640</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Select management screen implementation and base env setup">
+      <created>1690871132578</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690871132578</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -115,6 +125,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial blueprint" />
     <MESSAGE value="Packages setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Packages setup" />
+    <MESSAGE value="Select management screen implementation and base env setup" />
+    <MESSAGE value="Base model configuring and concept definition" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base model configuring and concept definition" />
   </component>
 </project>

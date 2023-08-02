@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PreviewContainer extends StatelessWidget {
+  // final List<String> pokemons;
+
   const PreviewContainer({Key? key}) : super(key: key);
 
   @override
