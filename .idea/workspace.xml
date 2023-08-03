@@ -9,24 +9,36 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Base model configuring and concept definition">
-      <change afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/preview_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/android/local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/assets/koala.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/ios/Flutter/Generated.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_model.freezed.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_model.g.dart" afterDir="false" />
+    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Base connection to pokemon API, pokemons receive">
+      <change afterPath="$PROJECT_DIR$/templates/bloc_template/lib/common/utils/dependencies.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/endpoint.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/extensions/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/extensions/typedefs.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/utils/dependencies.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/domain.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_preview.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_preview.freezed.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_preview.g.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_response.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_response.freezed.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_response.g.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/repositories/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/repositories/network/dio_client.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/repositories/pokemon_repository.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/services/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/services/pokemon_service.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/ios/Flutter/Generated.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/bloc_template.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/bloc_template.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/components.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/components.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/preview_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/preview_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/utils/container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/utils/dependencies.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/preview_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/pokedex_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/common.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/common.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/utils/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/utils/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/preview_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/pokedex_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/ui_kit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/ui_kit.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ui_kit/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +48,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,11 +85,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\domain\repositories\network" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\assets" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\common\typography" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\lib\common\utils" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\common\utils" />
-      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -127,6 +147,7 @@
     <MESSAGE value="Packages setup" />
     <MESSAGE value="Select management screen implementation and base env setup" />
     <MESSAGE value="Base model configuring and concept definition" />
-    <option name="LAST_COMMIT_MESSAGE" value="Base model configuring and concept definition" />
+    <MESSAGE value="Base connection to pokemon API, pokemons receive" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base connection to pokemon API, pokemons receive" />
   </component>
 </project>

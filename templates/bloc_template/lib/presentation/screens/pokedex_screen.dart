@@ -6,6 +6,6 @@ class PreviewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PreviewContainer();
+    return PokedexContainer();
   }
 }

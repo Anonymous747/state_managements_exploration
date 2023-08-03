@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:state_managements_exploration/common/utils/container.dart';
+import 'package:state_managements_exploration/common/utils/dependencies.dart';
 import 'package:state_managements_exploration/screens/select_management_screen.dart';
 import 'package:ui_kit/ui_kit.dart';
 

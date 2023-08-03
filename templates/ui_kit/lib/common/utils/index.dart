@@ -1,2 +1,2 @@
 export './navigation.dart';
-export '../typography/palette.dart';
+export './dependencies.dart';
