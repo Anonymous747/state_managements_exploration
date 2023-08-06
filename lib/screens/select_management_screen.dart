@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:state_managements_exploration/common/common.dart';
 import 'package:ui_kit/ui_kit.dart';
+import 'package:bloc_template/bloc_template.dart' as bloc;
 
 class SelectManagementScreen extends StatelessWidget {
+  static const routeName = "/select_management";
+
   const SelectManagementScreen({Key? key}) : super(key: key);
 
   @override
@@ -56,8 +60,11 @@ class SelectManagementScreen extends StatelessWidget {
                 maxWidth: 200,
                 style:
                     TextStyles.regularNormalStyle(fontWeight: FontWeight.w500),
-                onTap: () {},
+                onTap: () {
+                  pushNamed(bloc.PokedexScreen.route_name);
+                },
               ),
+              // Image.asset('assets/label.png'),
             ],
           ),
         ),
