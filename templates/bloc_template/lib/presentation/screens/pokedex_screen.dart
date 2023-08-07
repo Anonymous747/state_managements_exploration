@@ -11,6 +11,7 @@ class PokedexScreen extends StatelessWidget {
     return PokedexContainer(
       title: 'Bloc Implementation',
       pokemons: PokemonsListViewModel(pokemons: []),
+      onBack: () {},
     );
   }
 }

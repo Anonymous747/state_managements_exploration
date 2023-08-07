@@ -1,15 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:ui_kit/ui_kit.dart';
 
-part 'pokemon_view_model.g.dart';
 part 'pokemon_view_model.freezed.dart';
 
 @freezed
 class PokemonViewModel with _$PokemonViewModel {
   const factory PokemonViewModel({
     required String name,
-    String? pictureUrl,
+    required String imageUrl,
+    @Default(Palette.blue900) Color color,
   }) = _PokemonViewModel;
-
-  factory PokemonViewModel.fromJson(Map<String, dynamic> json) =>
-      _$PokemonViewModelFromJson(json);
 }

@@ -14,16 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-PokemonViewModel _$PokemonViewModelFromJson(Map<String, dynamic> json) {
-  return _PokemonViewModel.fromJson(json);
-}
-
 /// @nodoc
 mixin _$PokemonViewModel {
   String get name => throw _privateConstructorUsedError;
-  String? get pictureUrl => throw _privateConstructorUsedError;
+  String get imageUrl => throw _privateConstructorUsedError;
+  Color get color => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $PokemonViewModelCopyWith<PokemonViewModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +31,7 @@ abstract class $PokemonViewModelCopyWith<$Res> {
           PokemonViewModel value, $Res Function(PokemonViewModel) then) =
       _$PokemonViewModelCopyWithImpl<$Res, PokemonViewModel>;
   @useResult
-  $Res call({String name, String? pictureUrl});
+  $Res call({String name, String imageUrl, Color color});
 }
 
 /// @nodoc
@@ -52,17 +48,22 @@ class _$PokemonViewModelCopyWithImpl<$Res, $Val extends PokemonViewModel>
   @override
   $Res call({
     Object? name = null,
-    Object? pictureUrl = freezed,
+    Object? imageUrl = null,
+    Object? color = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      pictureUrl: freezed == pictureUrl
-          ? _value.pictureUrl
-          : pictureUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: null == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
     ) as $Val);
   }
 }
@@ -75,7 +76,7 @@ abstract class _$$_PokemonViewModelCopyWith<$Res>
       __$$_PokemonViewModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String? pictureUrl});
+  $Res call({String name, String imageUrl, Color color});
 }
 
 /// @nodoc
@@ -90,37 +91,45 @@ class __$$_PokemonViewModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
-    Object? pictureUrl = freezed,
+    Object? imageUrl = null,
+    Object? color = null,
   }) {
     return _then(_$_PokemonViewModel(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      pictureUrl: freezed == pictureUrl
-          ? _value.pictureUrl
-          : pictureUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: null == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_PokemonViewModel implements _PokemonViewModel {
-  const _$_PokemonViewModel({required this.name, this.pictureUrl});
 
-  factory _$_PokemonViewModel.fromJson(Map<String, dynamic> json) =>
-      _$$_PokemonViewModelFromJson(json);
+class _$_PokemonViewModel implements _PokemonViewModel {
+  const _$_PokemonViewModel(
+      {required this.name,
+      required this.imageUrl,
+      this.color = Palette.blue900});
 
   @override
   final String name;
   @override
-  final String? pictureUrl;
+  final String imageUrl;
+  @override
+  @JsonKey()
+  final Color color;
 
   @override
   String toString() {
-    return 'PokemonViewModel(name: $name, pictureUrl: $pictureUrl)';
+    return 'PokemonViewModel(name: $name, imageUrl: $imageUrl, color: $color)';
   }
 
   @override
@@ -129,40 +138,33 @@ class _$_PokemonViewModel implements _PokemonViewModel {
         (other.runtimeType == runtimeType &&
             other is _$_PokemonViewModel &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.pictureUrl, pictureUrl) ||
-                other.pictureUrl == pictureUrl));
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl) &&
+            (identical(other.color, color) || other.color == color));
   }
 
-  @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, pictureUrl);
+  int get hashCode => Object.hash(runtimeType, name, imageUrl, color);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_PokemonViewModelCopyWith<_$_PokemonViewModel> get copyWith =>
       __$$_PokemonViewModelCopyWithImpl<_$_PokemonViewModel>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_PokemonViewModelToJson(
-      this,
-    );
-  }
 }
 
 abstract class _PokemonViewModel implements PokemonViewModel {
   const factory _PokemonViewModel(
       {required final String name,
-      final String? pictureUrl}) = _$_PokemonViewModel;
-
-  factory _PokemonViewModel.fromJson(Map<String, dynamic> json) =
-      _$_PokemonViewModel.fromJson;
+      required final String imageUrl,
+      final Color color}) = _$_PokemonViewModel;
 
   @override
   String get name;
   @override
-  String? get pictureUrl;
+  String get imageUrl;
+  @override
+  Color get color;
   @override
   @JsonKey(ignore: true)
   _$$_PokemonViewModelCopyWith<_$_PokemonViewModel> get copyWith =>

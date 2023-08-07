@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/components/components.dart';
+import 'package:ui_kit/domain/domain.dart';
 
 class PokemonsList extends StatelessWidget {
-  final List<String> pokemons;
+  final List<PokemonViewModel> pokemons;
 
   const PokemonsList({
     required this.pokemons,
@@ -14,11 +15,12 @@ class PokemonsList extends StatelessWidget {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
       ),
       itemBuilder: (context, index) {
-        return PokemonCell();
+        return PokemonCell(
+          pokemon: pokemons[index],
+          margin: const EdgeInsets.all(12),
+        );
       },
       itemCount: pokemons.length,
     );

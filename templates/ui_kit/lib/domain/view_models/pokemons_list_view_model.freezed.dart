@@ -14,16 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-PokemonsListViewModel _$PokemonsListViewModelFromJson(
-    Map<String, dynamic> json) {
-  return _PokemonsListViewModel.fromJson(json);
-}
-
 /// @nodoc
 mixin _$PokemonsListViewModel {
   List<PokemonViewModel>? get pokemons => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $PokemonsListViewModelCopyWith<PokemonsListViewModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -97,13 +91,10 @@ class __$$_PokemonsListViewModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_PokemonsListViewModel implements _PokemonsListViewModel {
   const _$_PokemonsListViewModel({final List<PokemonViewModel>? pokemons})
       : _pokemons = pokemons;
-
-  factory _$_PokemonsListViewModel.fromJson(Map<String, dynamic> json) =>
-      _$$_PokemonsListViewModelFromJson(json);
 
   final List<PokemonViewModel>? _pokemons;
   @override
@@ -128,7 +119,6 @@ class _$_PokemonsListViewModel implements _PokemonsListViewModel {
             const DeepCollectionEquality().equals(other._pokemons, _pokemons));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_pokemons));
@@ -139,21 +129,11 @@ class _$_PokemonsListViewModel implements _PokemonsListViewModel {
   _$$_PokemonsListViewModelCopyWith<_$_PokemonsListViewModel> get copyWith =>
       __$$_PokemonsListViewModelCopyWithImpl<_$_PokemonsListViewModel>(
           this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_PokemonsListViewModelToJson(
-      this,
-    );
-  }
 }
 
 abstract class _PokemonsListViewModel implements PokemonsListViewModel {
   const factory _PokemonsListViewModel(
       {final List<PokemonViewModel>? pokemons}) = _$_PokemonsListViewModel;
-
-  factory _PokemonsListViewModel.fromJson(Map<String, dynamic> json) =
-      _$_PokemonsListViewModel.fromJson;
 
   @override
   List<PokemonViewModel>? get pokemons;
