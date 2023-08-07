@@ -20,7 +20,8 @@ PokemonModel _$PokemonModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PokemonModel {
-  String? get temp => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +35,7 @@ abstract class $PokemonModelCopyWith<$Res> {
           PokemonModel value, $Res Function(PokemonModel) then) =
       _$PokemonModelCopyWithImpl<$Res, PokemonModel>;
   @useResult
-  $Res call({String? temp});
+  $Res call({String name, String url});
 }
 
 /// @nodoc
@@ -50,13 +51,18 @@ class _$PokemonModelCopyWithImpl<$Res, $Val extends PokemonModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? temp = freezed,
+    Object? name = null,
+    Object? url = null,
   }) {
     return _then(_value.copyWith(
-      temp: freezed == temp
-          ? _value.temp
-          : temp // ignore: cast_nullable_to_non_nullable
-              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -69,7 +75,7 @@ abstract class _$$_PokemonModelCopyWith<$Res>
       __$$_PokemonModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? temp});
+  $Res call({String name, String url});
 }
 
 /// @nodoc
@@ -83,13 +89,18 @@ class __$$_PokemonModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? temp = freezed,
+    Object? name = null,
+    Object? url = null,
   }) {
     return _then(_$_PokemonModel(
-      temp: freezed == temp
-          ? _value.temp
-          : temp // ignore: cast_nullable_to_non_nullable
-              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -97,17 +108,19 @@ class __$$_PokemonModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_PokemonModel implements _PokemonModel {
-  const _$_PokemonModel({this.temp});
+  const _$_PokemonModel({required this.name, required this.url});
 
   factory _$_PokemonModel.fromJson(Map<String, dynamic> json) =>
       _$$_PokemonModelFromJson(json);
 
   @override
-  final String? temp;
+  final String name;
+  @override
+  final String url;
 
   @override
   String toString() {
-    return 'PokemonModel(temp: $temp)';
+    return 'PokemonModel(name: $name, url: $url)';
   }
 
   @override
@@ -115,12 +128,13 @@ class _$_PokemonModel implements _PokemonModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PokemonModel &&
-            (identical(other.temp, temp) || other.temp == temp));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.url, url) || other.url == url));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, temp);
+  int get hashCode => Object.hash(runtimeType, name, url);
 
   @JsonKey(ignore: true)
   @override
@@ -137,13 +151,17 @@ class _$_PokemonModel implements _PokemonModel {
 }
 
 abstract class _PokemonModel implements PokemonModel {
-  const factory _PokemonModel({final String? temp}) = _$_PokemonModel;
+  const factory _PokemonModel(
+      {required final String name,
+      required final String url}) = _$_PokemonModel;
 
   factory _PokemonModel.fromJson(Map<String, dynamic> json) =
       _$_PokemonModel.fromJson;
 
   @override
-  String? get temp;
+  String get name;
+  @override
+  String get url;
   @override
   @JsonKey(ignore: true)
   _$$_PokemonModelCopyWith<_$_PokemonModel> get copyWith =>

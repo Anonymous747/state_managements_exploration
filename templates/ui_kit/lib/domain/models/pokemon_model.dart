@@ -6,7 +6,8 @@ part 'pokemon_model.freezed.dart';
 @freezed
 class PokemonModel with _$PokemonModel {
   const factory PokemonModel({
-    String? temp,
+    required String name,
+    required String url,
   }) = _PokemonModel;
 
   factory PokemonModel.fromJson(Map<String, dynamic> json) =>

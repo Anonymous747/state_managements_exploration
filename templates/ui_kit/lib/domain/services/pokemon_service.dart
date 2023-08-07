@@ -8,15 +8,22 @@ class PokemonService {
 
   const PokemonService(this._dio);
 
-  Future<Either<int?, PokemonResponse?>> getPokemons() async {
+  Future<Either<int?, PokemonResponse?>> getPokemons({
+    int limit = 20,
+    int offset = 20,
+  }) async {
     try {
       final response = await _dio.get(Endpoint.pokemon);
+
+      print('response = ${response.data}');
 
       if (response.data == null) {
         return right(null);
       }
 
       final pokemonsModel = PokemonResponse.fromJson(response.data);
+
+      print('responseModel = $pokemonsModel');
 
       return right(pokemonsModel);
     } on DioException catch (e) {

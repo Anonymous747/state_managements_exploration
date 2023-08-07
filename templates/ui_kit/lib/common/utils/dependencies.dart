@@ -3,6 +3,17 @@ import 'package:ui_kit/domain/domain.dart';
 
 final _getIt = GetIt.instance;
 
+T instanceOf<T extends Object>({
+  String? instanceName,
+  dynamic param1,
+  dynamic param2,
+}) =>
+    GetIt.instance.get<T>(
+      instanceName: instanceName,
+      param1: param1,
+      param2: param2,
+    );
+
 initUIKitDependencies() {
   _initRepositories();
   _initServices();

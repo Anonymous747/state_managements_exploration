@@ -19,19 +19,22 @@ mixin _$PokedexState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(PokemonsListViewModel viewModel) loaded,
+    required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(PokemonsListViewModel viewModel)? loaded,
+    TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(PokemonsListViewModel viewModel)? loaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$PokedexState {
   TResult map<TResult extends Object?>({
     required TResult Function(_PokedexLoadingState value) loading,
     required TResult Function(_PokedexLoadedState value) loaded,
+    required TResult Function(_PokedexErrorState value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PokedexLoadingState value)? loading,
     TResult? Function(_PokedexLoadedState value)? loaded,
+    TResult? Function(_PokedexErrorState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PokedexLoadingState value)? loading,
     TResult Function(_PokedexLoadedState value)? loaded,
+    TResult Function(_PokedexErrorState value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,7 +119,8 @@ class _$_PokedexLoadingState implements _PokedexLoadingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(PokemonsListViewModel viewModel) loaded,
+    required TResult Function(String message) error,
   }) {
     return loading();
   }
@@ -122,7 +129,8 @@ class _$_PokedexLoadingState implements _PokedexLoadingState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(PokemonsListViewModel viewModel)? loaded,
+    TResult? Function(String message)? error,
   }) {
     return loading?.call();
   }
@@ -131,7 +139,8 @@ class _$_PokedexLoadingState implements _PokedexLoadingState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(PokemonsListViewModel viewModel)? loaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -145,6 +154,7 @@ class _$_PokedexLoadingState implements _PokedexLoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(_PokedexLoadingState value) loading,
     required TResult Function(_PokedexLoadedState value) loaded,
+    required TResult Function(_PokedexErrorState value) error,
   }) {
     return loading(this);
   }
@@ -154,6 +164,7 @@ class _$_PokedexLoadingState implements _PokedexLoadingState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PokedexLoadingState value)? loading,
     TResult? Function(_PokedexLoadedState value)? loaded,
+    TResult? Function(_PokedexErrorState value)? error,
   }) {
     return loading?.call(this);
   }
@@ -163,6 +174,7 @@ class _$_PokedexLoadingState implements _PokedexLoadingState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PokedexLoadingState value)? loading,
     TResult Function(_PokedexLoadedState value)? loaded,
+    TResult Function(_PokedexErrorState value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -181,6 +193,10 @@ abstract class _$$_PokedexLoadedStateCopyWith<$Res> {
   factory _$$_PokedexLoadedStateCopyWith(_$_PokedexLoadedState value,
           $Res Function(_$_PokedexLoadedState) then) =
       __$$_PokedexLoadedStateCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PokemonsListViewModel viewModel});
+
+  $PokemonsListViewModelCopyWith<$Res> get viewModel;
 }
 
 /// @nodoc
@@ -190,54 +206,91 @@ class __$$_PokedexLoadedStateCopyWithImpl<$Res>
   __$$_PokedexLoadedStateCopyWithImpl(
       _$_PokedexLoadedState _value, $Res Function(_$_PokedexLoadedState) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewModel = null,
+  }) {
+    return _then(_$_PokedexLoadedState(
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as PokemonsListViewModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PokemonsListViewModelCopyWith<$Res> get viewModel {
+    return $PokemonsListViewModelCopyWith<$Res>(_value.viewModel, (value) {
+      return _then(_value.copyWith(viewModel: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$_PokedexLoadedState implements _PokedexLoadedState {
-  const _$_PokedexLoadedState();
+  const _$_PokedexLoadedState({required this.viewModel});
+
+  @override
+  final PokemonsListViewModel viewModel;
 
   @override
   String toString() {
-    return 'PokedexState.loaded()';
+    return 'PokedexState.loaded(viewModel: $viewModel)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_PokedexLoadedState);
+        (other.runtimeType == runtimeType &&
+            other is _$_PokedexLoadedState &&
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, viewModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PokedexLoadedStateCopyWith<_$_PokedexLoadedState> get copyWith =>
+      __$$_PokedexLoadedStateCopyWithImpl<_$_PokedexLoadedState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(PokemonsListViewModel viewModel) loaded,
+    required TResult Function(String message) error,
   }) {
-    return loaded();
+    return loaded(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(PokemonsListViewModel viewModel)? loaded,
+    TResult? Function(String message)? error,
   }) {
-    return loaded?.call();
+    return loaded?.call(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(PokemonsListViewModel viewModel)? loaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded();
+      return loaded(viewModel);
     }
     return orElse();
   }
@@ -247,6 +300,7 @@ class _$_PokedexLoadedState implements _PokedexLoadedState {
   TResult map<TResult extends Object?>({
     required TResult Function(_PokedexLoadingState value) loading,
     required TResult Function(_PokedexLoadedState value) loaded,
+    required TResult Function(_PokedexErrorState value) error,
   }) {
     return loaded(this);
   }
@@ -256,6 +310,7 @@ class _$_PokedexLoadedState implements _PokedexLoadedState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PokedexLoadingState value)? loading,
     TResult? Function(_PokedexLoadedState value)? loaded,
+    TResult? Function(_PokedexErrorState value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -265,6 +320,7 @@ class _$_PokedexLoadedState implements _PokedexLoadedState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PokedexLoadingState value)? loading,
     TResult Function(_PokedexLoadedState value)? loaded,
+    TResult Function(_PokedexErrorState value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -275,5 +331,152 @@ class _$_PokedexLoadedState implements _PokedexLoadedState {
 }
 
 abstract class _PokedexLoadedState implements PokedexState {
-  const factory _PokedexLoadedState() = _$_PokedexLoadedState;
+  const factory _PokedexLoadedState(
+      {required final PokemonsListViewModel viewModel}) = _$_PokedexLoadedState;
+
+  PokemonsListViewModel get viewModel;
+  @JsonKey(ignore: true)
+  _$$_PokedexLoadedStateCopyWith<_$_PokedexLoadedState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PokedexErrorStateCopyWith<$Res> {
+  factory _$$_PokedexErrorStateCopyWith(_$_PokedexErrorState value,
+          $Res Function(_$_PokedexErrorState) then) =
+      __$$_PokedexErrorStateCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$_PokedexErrorStateCopyWithImpl<$Res>
+    extends _$PokedexStateCopyWithImpl<$Res, _$_PokedexErrorState>
+    implements _$$_PokedexErrorStateCopyWith<$Res> {
+  __$$_PokedexErrorStateCopyWithImpl(
+      _$_PokedexErrorState _value, $Res Function(_$_PokedexErrorState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$_PokedexErrorState(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PokedexErrorState implements _PokedexErrorState {
+  const _$_PokedexErrorState({required this.message});
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'PokedexState.error(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PokedexErrorState &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PokedexErrorStateCopyWith<_$_PokedexErrorState> get copyWith =>
+      __$$_PokedexErrorStateCopyWithImpl<_$_PokedexErrorState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(PokemonsListViewModel viewModel) loaded,
+    required TResult Function(String message) error,
+  }) {
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(PokemonsListViewModel viewModel)? loaded,
+    TResult? Function(String message)? error,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(PokemonsListViewModel viewModel)? loaded,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PokedexLoadingState value) loading,
+    required TResult Function(_PokedexLoadedState value) loaded,
+    required TResult Function(_PokedexErrorState value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PokedexLoadingState value)? loading,
+    TResult? Function(_PokedexLoadedState value)? loaded,
+    TResult? Function(_PokedexErrorState value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PokedexLoadingState value)? loading,
+    TResult Function(_PokedexLoadedState value)? loaded,
+    TResult Function(_PokedexErrorState value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PokedexErrorState implements PokedexState {
+  const factory _PokedexErrorState({required final String message}) =
+      _$_PokedexErrorState;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$_PokedexErrorStateCopyWith<_$_PokedexErrorState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,7 @@
+import 'package:bloc_template/bloc_template.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_kit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PokedexScreen extends StatelessWidget {
   static const route_name = 'pokedex';
@@ -8,10 +10,28 @@ class PokedexScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PokedexContainer(
-      title: 'Bloc Implementation',
-      pokemons: PokemonsListViewModel(pokemons: []),
-      onBack: () {},
+    return Scaffold(
+      backgroundColor: Palette.blue300,
+      body: BlocProvider<PokedexCubit>(
+        create: (context) => instanceOf<PokedexCubit>(),
+        child: BlocBuilder<PokedexCubit, PokedexState>(
+          builder: (context, state) {
+            return state.map(
+              loading: (_) => Center(child: CircularProgressIndicator()),
+              error: (errorState) => Center(
+                child: Text(errorState.message),
+              ),
+              loaded: (loadedState) {
+                return PokedexContainer(
+                  title: 'Bloc Implementation',
+                  pokemons: PokemonsListViewModel(
+                      pokemons: loadedState.viewModel.pokemons),
+                );
+              },
+            );
+          },
+        ),
+      ),
     );
   }
 }

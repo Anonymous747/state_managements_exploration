@@ -6,38 +6,36 @@ import 'package:ui_kit/domain/domain.dart';
 class PokedexContainer extends StatelessWidget {
   final PokemonsListViewModel pokemons;
   final String title;
-  final VoidCallback onBack;
 
   const PokedexContainer({
     required this.title,
     required this.pokemons,
-    required this.onBack,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Palette.blue300,
-      body: Stack(
-        children: [
-          Positioned(
-            top: 20,
-            child: BackButton(onPressed: onBack),
-          ),
-          Column(
-            children: [
-              Center(
-                child: PokemonLogo(),
+    return Stack(
+      children: [
+        Positioned(
+          top: 20,
+          child: BackButton(onPressed: () => Navigator.pop(context)),
+        ),
+        Column(
+          children: [
+            const Center(
+              child: PokemonLogo(),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: PokemonTextField(
+                hint: 'Search...',
+                borderRadius: 24,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12),
-                child: PokemonTextField(
-                  hint: 'Search...',
-                  borderRadius: 24,
-                ),
-              ),
-              Expanded(
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4),
                 child: PokemonsList(
                   pokemons: [
                     PokemonViewModel(
@@ -85,10 +83,10 @@ class PokedexContainer extends StatelessWidget {
                   ],
                 ),
               ),
-            ],
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

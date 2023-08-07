@@ -19,7 +19,7 @@ class PokemonsList extends StatelessWidget {
       itemBuilder: (context, index) {
         return PokemonCell(
           pokemon: pokemons[index],
-          margin: const EdgeInsets.all(12),
+          margin: EdgeInsets.all(12),
         );
       },
       itemCount: pokemons.length,
