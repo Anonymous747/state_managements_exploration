@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ui_kit/common/common.dart';
 import 'package:ui_kit/components/components.dart';
 import 'package:ui_kit/domain/domain.dart';
 
 class PokedexContainer extends StatelessWidget {
-  final PokemonsListViewModel pokemons;
+  final List<PokemonCellViewModel> pokemons;
   final String title;
+  // final void Function()
 
   const PokedexContainer({
     required this.title,
@@ -37,50 +37,7 @@ class PokedexContainer extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4),
                 child: PokemonsList(
-                  pokemons: [
-                    PokemonViewModel(
-                      name: 'sadas',
-                      color: Palette.purple300,
-                      imageUrl:
-                          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
-                    ),
-                    PokemonViewModel(
-                      name: 'sadas',
-                      color: Palette.purple300,
-                      imageUrl:
-                          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
-                    ),
-                    PokemonViewModel(
-                      name: 'sadas',
-                      color: Palette.purple300,
-                      imageUrl:
-                          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
-                    ),
-                    PokemonViewModel(
-                      name: 'sadas',
-                      color: Palette.purple300,
-                      imageUrl:
-                          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
-                    ),
-                    PokemonViewModel(
-                      name: 'sadas',
-                      color: Palette.purple300,
-                      imageUrl:
-                          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
-                    ),
-                    PokemonViewModel(
-                      name: 'sadas',
-                      color: Palette.purple300,
-                      imageUrl:
-                          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
-                    ),
-                    PokemonViewModel(
-                      name: 'sadas',
-                      color: Palette.purple300,
-                      imageUrl:
-                          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
-                    )
-                  ],
+                  pokemons: pokemons,
                 ),
               ),
             ),

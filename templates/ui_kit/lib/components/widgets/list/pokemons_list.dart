@@ -3,7 +3,8 @@ import 'package:ui_kit/components/components.dart';
 import 'package:ui_kit/domain/domain.dart';
 
 class PokemonsList extends StatelessWidget {
-  final List<PokemonViewModel> pokemons;
+  final List<PokemonCellViewModel> pokemons;
+  // final Function(int index, )
 
   const PokemonsList({
     required this.pokemons,
@@ -19,7 +20,7 @@ class PokemonsList extends StatelessWidget {
       itemBuilder: (context, index) {
         return PokemonCell(
           pokemon: pokemons[index],
-          margin: EdgeInsets.all(12),
+          margin: const EdgeInsets.all(12),
         );
       },
       itemCount: pokemons.length,

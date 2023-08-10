@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PokemonsListViewModel {
-  List<PokemonViewModel>? get pokemons => throw _privateConstructorUsedError;
+  List<PokemonCellViewModel>? get pokemons =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PokemonsListViewModelCopyWith<PokemonsListViewModel> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $PokemonsListViewModelCopyWith<$Res> {
           $Res Function(PokemonsListViewModel) then) =
       _$PokemonsListViewModelCopyWithImpl<$Res, PokemonsListViewModel>;
   @useResult
-  $Res call({List<PokemonViewModel>? pokemons});
+  $Res call({List<PokemonCellViewModel>? pokemons});
 }
 
 /// @nodoc
@@ -52,7 +53,7 @@ class _$PokemonsListViewModelCopyWithImpl<$Res,
       pokemons: freezed == pokemons
           ? _value.pokemons
           : pokemons // ignore: cast_nullable_to_non_nullable
-              as List<PokemonViewModel>?,
+              as List<PokemonCellViewModel>?,
     ) as $Val);
   }
 }
@@ -65,7 +66,7 @@ abstract class _$$_PokemonsListViewModelCopyWith<$Res>
       __$$_PokemonsListViewModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<PokemonViewModel>? pokemons});
+  $Res call({List<PokemonCellViewModel>? pokemons});
 }
 
 /// @nodoc
@@ -85,7 +86,7 @@ class __$$_PokemonsListViewModelCopyWithImpl<$Res>
       pokemons: freezed == pokemons
           ? _value._pokemons
           : pokemons // ignore: cast_nullable_to_non_nullable
-              as List<PokemonViewModel>?,
+              as List<PokemonCellViewModel>?,
     ));
   }
 }
@@ -93,12 +94,12 @@ class __$$_PokemonsListViewModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_PokemonsListViewModel implements _PokemonsListViewModel {
-  const _$_PokemonsListViewModel({final List<PokemonViewModel>? pokemons})
+  const _$_PokemonsListViewModel({final List<PokemonCellViewModel>? pokemons})
       : _pokemons = pokemons;
 
-  final List<PokemonViewModel>? _pokemons;
+  final List<PokemonCellViewModel>? _pokemons;
   @override
-  List<PokemonViewModel>? get pokemons {
+  List<PokemonCellViewModel>? get pokemons {
     final value = _pokemons;
     if (value == null) return null;
     if (_pokemons is EqualUnmodifiableListView) return _pokemons;
@@ -133,10 +134,10 @@ class _$_PokemonsListViewModel implements _PokemonsListViewModel {
 
 abstract class _PokemonsListViewModel implements PokemonsListViewModel {
   const factory _PokemonsListViewModel(
-      {final List<PokemonViewModel>? pokemons}) = _$_PokemonsListViewModel;
+      {final List<PokemonCellViewModel>? pokemons}) = _$_PokemonsListViewModel;
 
   @override
-  List<PokemonViewModel>? get pokemons;
+  List<PokemonCellViewModel>? get pokemons;
   @override
   @JsonKey(ignore: true)
   _$$_PokemonsListViewModelCopyWith<_$_PokemonsListViewModel> get copyWith =>

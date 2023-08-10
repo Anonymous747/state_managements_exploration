@@ -17,15 +17,14 @@ class PokedexScreen extends StatelessWidget {
         child: BlocBuilder<PokedexCubit, PokedexState>(
           builder: (context, state) {
             return state.map(
-              loading: (_) => Center(child: CircularProgressIndicator()),
+              loading: (_) => const Center(child: CircularProgressIndicator()),
               error: (errorState) => Center(
                 child: Text(errorState.message),
               ),
               loaded: (loadedState) {
                 return PokedexContainer(
                   title: 'Bloc Implementation',
-                  pokemons: PokemonsListViewModel(
-                      pokemons: loadedState.viewModel.pokemons),
+                  pokemons: loadedState.viewModels,
                 );
               },
             );

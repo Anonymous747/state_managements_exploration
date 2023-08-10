@@ -4,7 +4,7 @@ import 'package:ui_kit/common/common.dart';
 import 'package:ui_kit/domain/domain.dart';
 
 class PokemonCell extends StatelessWidget {
-  final PokemonViewModel pokemon;
+  final PokemonCellViewModel pokemon;
   final EdgeInsets? margin;
 
   const PokemonCell({

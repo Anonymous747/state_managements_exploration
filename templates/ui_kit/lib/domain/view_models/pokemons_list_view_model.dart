@@ -6,6 +6,6 @@ part 'pokemons_list_view_model.freezed.dart';
 @freezed
 class PokemonsListViewModel with _$PokemonsListViewModel {
   const factory PokemonsListViewModel({
-    List<PokemonViewModel>? pokemons,
+    List<PokemonCellViewModel>? pokemons,
   }) = _PokemonsListViewModel;
 }

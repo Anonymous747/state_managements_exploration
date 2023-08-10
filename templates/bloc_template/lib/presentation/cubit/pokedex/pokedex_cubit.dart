@@ -13,10 +13,21 @@ class PokedexCubit extends Cubit<PokedexState> {
   final PokemonRepository _pokemonRepository;
 
   PokedexCubit(this._pokemonRepository) : super(const PokedexState.loading()) {
-    receivePokemons();
+    _receivePokemons();
   }
 
-  Future<void> receivePokemons({int limit = 20, int offset = 20}) async {
+  Future<void> _receivePokemonData(String name) async {
+    state.mapOrNull(loaded: (loadedState) {
+      _pokemonRepository.getPokemonData(
+          name: name,
+          onSuccess: (response) {},
+          onError: (errorMessage) {
+            // emit(loadedState.copyWith(viewModel: ));
+          });
+    });
+  }
+
+  Future<void> _receivePokemons({int limit = 20, int offset = 20}) async {
     _pokemonRepository.getPokemons(
       onSuccess: (response) {
         final pokemons = response.results;
@@ -27,9 +38,12 @@ class PokedexCubit extends Cubit<PokedexState> {
           return;
         }
 
+        final loadingPokemons = List.generate(
+            pokemons.length, (index) => const PokemonCellViewModel.loading());
+
         final viewModel = _mapper.convertToViewModel([]);
 
-        emit(PokedexState.loaded(viewModel: viewModel));
+        emit(PokedexState.loaded(viewModels: loadingPokemons));
       },
       onError: (message) {
         emit(PokedexState.error(message: message));

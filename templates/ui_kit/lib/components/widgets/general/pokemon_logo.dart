@@ -11,7 +11,7 @@ class PokemonLogo extends StatelessWidget {
       constraints: const BoxConstraints(minWidth: 100, maxWidth: 280),
       child: CachedNetworkImage(
         imageUrl: Constants.pokemonLogo,
-        placeholder: (_, __) => const SizedBox(height: 40),
+        placeholder: (_, __) => const SizedBox(height: 200),
       ),
     );
   }
