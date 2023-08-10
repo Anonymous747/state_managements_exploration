@@ -25,6 +25,33 @@ class PokedexScreen extends StatelessWidget {
                 return PokedexContainer(
                   title: 'Bloc Implementation',
                   pokemons: loadedState.viewModels,
+                  namedCellBuilder: ({
+                    required String name,
+                  }) {
+                    final cellCubit = instanceOf<PokemonCellCubit>();
+
+                    return BlocProvider<PokemonCellCubit>(
+                      create: (_) => cellCubit,
+                      child: BlocBuilder<PokemonCellCubit, PokemonCellState>(
+                          bloc: cellCubit,
+                          builder: (context, state) {
+                            cellCubit.loadPokemon(name);
+
+                            return state.map(
+                              loading: (_) => const Center(
+                                  child: CircularProgressIndicator()),
+                              error: (error) =>
+                                  const Center(child: Text("Error")),
+                              loaded: (loadedState) {
+                                return PokemonCell(
+                                  pokemon: loadedState.viewModel,
+                                  margin: const EdgeInsets.all(12),
+                                );
+                              },
+                            );
+                          }),
+                    );
+                  },
                 );
               },
             );

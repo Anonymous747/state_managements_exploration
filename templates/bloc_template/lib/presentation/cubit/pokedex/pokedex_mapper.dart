@@ -3,11 +3,11 @@ part of './pokedex_cubit.dart';
 class PokedexMapper {
   /// It may be an extension on [PokemonModel], however it option is closer to me
   ///
-  List<PokemonViewModel> convertToViewModel(List<PokemonModel> pokemons) {
+  List<PokemonBaseViewModel> convertToViewModel(List<PokemonPreview> pokemons) {
     final viewModels = pokemons
-        .map((pokemon) => PokemonViewModel(
-              name: 'name',
-              imageUrl: 'image',
+        .map((pokemon) => PokemonBaseViewModel(
+              name: pokemon.name,
+              imageUrl: pokemon.url,
             ))
         .toList();
 

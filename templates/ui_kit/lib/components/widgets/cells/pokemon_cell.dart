@@ -4,7 +4,7 @@ import 'package:ui_kit/common/common.dart';
 import 'package:ui_kit/domain/domain.dart';
 
 class PokemonCell extends StatelessWidget {
-  final PokemonCellViewModel pokemon;
+  final PokemonViewModel pokemon;
   final EdgeInsets? margin;
 
   const PokemonCell({
@@ -41,6 +41,7 @@ class PokemonCell extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 10),
             child: Text(
+              // TODO:
               pokemon.name,
               style: TextStyles.regularBigStyle(fontWeight: FontWeight.w500),
             ),

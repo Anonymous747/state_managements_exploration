@@ -12,6 +12,8 @@ class PokemonService {
     required String name,
   }) async {
     try {
+      print('========= pokemon path ${Endpoint.pokemon}/$name');
+
       final response = await _dio.get('${Endpoint.pokemon}/$name');
 
       print('pokemon data response = ${response.data}');

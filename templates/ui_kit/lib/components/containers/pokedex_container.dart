@@ -3,13 +3,14 @@ import 'package:ui_kit/components/components.dart';
 import 'package:ui_kit/domain/domain.dart';
 
 class PokedexContainer extends StatelessWidget {
-  final List<PokemonCellViewModel> pokemons;
+  final List<PokemonBaseViewModel> pokemons;
+  final Widget Function({required String name}) namedCellBuilder;
   final String title;
-  // final void Function()
 
   const PokedexContainer({
     required this.title,
     required this.pokemons,
+    required this.namedCellBuilder,
     Key? key,
   }) : super(key: key);
 
@@ -38,6 +39,7 @@ class PokedexContainer extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 4),
                 child: PokemonsList(
                   pokemons: pokemons,
+                  namedCellBuilder: namedCellBuilder,
                 ),
               ),
             ),

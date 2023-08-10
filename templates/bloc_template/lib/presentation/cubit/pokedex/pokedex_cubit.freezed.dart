@@ -19,21 +19,21 @@ mixin _$PokedexState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<PokemonCellViewModel> viewModels) loaded,
+    required TResult Function(List<PokemonBaseViewModel> viewModels) loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<PokemonCellViewModel> viewModels)? loaded,
+    TResult? Function(List<PokemonBaseViewModel> viewModels)? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PokemonCellViewModel> viewModels)? loaded,
+    TResult Function(List<PokemonBaseViewModel> viewModels)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -119,7 +119,7 @@ class _$_PokedexLoadingState implements _PokedexLoadingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<PokemonCellViewModel> viewModels) loaded,
+    required TResult Function(List<PokemonBaseViewModel> viewModels) loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -129,7 +129,7 @@ class _$_PokedexLoadingState implements _PokedexLoadingState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<PokemonCellViewModel> viewModels)? loaded,
+    TResult? Function(List<PokemonBaseViewModel> viewModels)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -139,7 +139,7 @@ class _$_PokedexLoadingState implements _PokedexLoadingState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PokemonCellViewModel> viewModels)? loaded,
+    TResult Function(List<PokemonBaseViewModel> viewModels)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -194,7 +194,7 @@ abstract class _$$_PokedexLoadedStateCopyWith<$Res> {
           $Res Function(_$_PokedexLoadedState) then) =
       __$$_PokedexLoadedStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<PokemonCellViewModel> viewModels});
+  $Res call({List<PokemonBaseViewModel> viewModels});
 }
 
 /// @nodoc
@@ -214,7 +214,7 @@ class __$$_PokedexLoadedStateCopyWithImpl<$Res>
       viewModels: null == viewModels
           ? _value._viewModels
           : viewModels // ignore: cast_nullable_to_non_nullable
-              as List<PokemonCellViewModel>,
+              as List<PokemonBaseViewModel>,
     ));
   }
 }
@@ -223,12 +223,12 @@ class __$$_PokedexLoadedStateCopyWithImpl<$Res>
 
 class _$_PokedexLoadedState implements _PokedexLoadedState {
   const _$_PokedexLoadedState(
-      {required final List<PokemonCellViewModel> viewModels})
+      {required final List<PokemonBaseViewModel> viewModels})
       : _viewModels = viewModels;
 
-  final List<PokemonCellViewModel> _viewModels;
+  final List<PokemonBaseViewModel> _viewModels;
   @override
-  List<PokemonCellViewModel> get viewModels {
+  List<PokemonBaseViewModel> get viewModels {
     if (_viewModels is EqualUnmodifiableListView) return _viewModels;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_viewModels);
@@ -263,7 +263,7 @@ class _$_PokedexLoadedState implements _PokedexLoadedState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<PokemonCellViewModel> viewModels) loaded,
+    required TResult Function(List<PokemonBaseViewModel> viewModels) loaded,
     required TResult Function(String message) error,
   }) {
     return loaded(viewModels);
@@ -273,7 +273,7 @@ class _$_PokedexLoadedState implements _PokedexLoadedState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<PokemonCellViewModel> viewModels)? loaded,
+    TResult? Function(List<PokemonBaseViewModel> viewModels)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loaded?.call(viewModels);
@@ -283,7 +283,7 @@ class _$_PokedexLoadedState implements _PokedexLoadedState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PokemonCellViewModel> viewModels)? loaded,
+    TResult Function(List<PokemonBaseViewModel> viewModels)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -330,10 +330,10 @@ class _$_PokedexLoadedState implements _PokedexLoadedState {
 
 abstract class _PokedexLoadedState implements PokedexState {
   const factory _PokedexLoadedState(
-          {required final List<PokemonCellViewModel> viewModels}) =
+          {required final List<PokemonBaseViewModel> viewModels}) =
       _$_PokedexLoadedState;
 
-  List<PokemonCellViewModel> get viewModels;
+  List<PokemonBaseViewModel> get viewModels;
   @JsonKey(ignore: true)
   _$$_PokedexLoadedStateCopyWith<_$_PokedexLoadedState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -405,7 +405,7 @@ class _$_PokedexErrorState implements _PokedexErrorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<PokemonCellViewModel> viewModels) loaded,
+    required TResult Function(List<PokemonBaseViewModel> viewModels) loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -415,7 +415,7 @@ class _$_PokedexErrorState implements _PokedexErrorState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<PokemonCellViewModel> viewModels)? loaded,
+    TResult? Function(List<PokemonBaseViewModel> viewModels)? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -425,7 +425,7 @@ class _$_PokedexErrorState implements _PokedexErrorState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PokemonCellViewModel> viewModels)? loaded,
+    TResult Function(List<PokemonBaseViewModel> viewModels)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

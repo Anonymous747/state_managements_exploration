@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:ui_kit/components/components.dart';
 import 'package:ui_kit/domain/domain.dart';
 
 class PokemonsList extends StatelessWidget {
-  final List<PokemonCellViewModel> pokemons;
-  // final Function(int index, )
+  final List<PokemonBaseViewModel> pokemons;
+  final Widget Function({required String name}) namedCellBuilder;
 
   const PokemonsList({
     required this.pokemons,
+    required this.namedCellBuilder,
     Key? key,
   }) : super(key: key);
 
@@ -18,10 +18,7 @@ class PokemonsList extends StatelessWidget {
         crossAxisCount: 2,
       ),
       itemBuilder: (context, index) {
-        return PokemonCell(
-          pokemon: pokemons[index],
-          margin: const EdgeInsets.all(12),
-        );
+        return namedCellBuilder(name: pokemons[index].name);
       },
       itemCount: pokemons.length,
     );
