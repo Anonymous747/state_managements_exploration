@@ -20,9 +20,19 @@ PokemonDataResponse _$PokemonDataResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PokemonDataResponse {
-  String get name => throw _privateConstructorUsedError;
-  int get order => throw _privateConstructorUsedError;
-  PokemonSprites get sprites => throw _privateConstructorUsedError;
+  PokemonSprites? get sprites => throw _privateConstructorUsedError;
+  List<Abilities>? get abilities => throw _privateConstructorUsedError;
+  List<Stats>? get stats => throw _privateConstructorUsedError;
+  List<Types>? get types => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  int? get order => throw _privateConstructorUsedError;
+  int? get height => throw _privateConstructorUsedError;
+  int? get weight => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'base_experience')
+  int? get baseExperience => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_default')
+  bool? get isDefault => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,9 +46,20 @@ abstract class $PokemonDataResponseCopyWith<$Res> {
           PokemonDataResponse value, $Res Function(PokemonDataResponse) then) =
       _$PokemonDataResponseCopyWithImpl<$Res, PokemonDataResponse>;
   @useResult
-  $Res call({String name, int order, PokemonSprites sprites});
+  $Res call(
+      {PokemonSprites? sprites,
+      List<Abilities>? abilities,
+      List<Stats>? stats,
+      List<Types>? types,
+      int? id,
+      int? order,
+      int? height,
+      int? weight,
+      String? name,
+      @JsonKey(name: 'base_experience') int? baseExperience,
+      @JsonKey(name: 'is_default') bool? isDefault});
 
-  $PokemonSpritesCopyWith<$Res> get sprites;
+  $PokemonSpritesCopyWith<$Res>? get sprites;
 }
 
 /// @nodoc
@@ -54,30 +75,74 @@ class _$PokemonDataResponseCopyWithImpl<$Res, $Val extends PokemonDataResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? order = null,
-    Object? sprites = null,
+    Object? sprites = freezed,
+    Object? abilities = freezed,
+    Object? stats = freezed,
+    Object? types = freezed,
+    Object? id = freezed,
+    Object? order = freezed,
+    Object? height = freezed,
+    Object? weight = freezed,
+    Object? name = freezed,
+    Object? baseExperience = freezed,
+    Object? isDefault = freezed,
   }) {
     return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
-              as int,
-      sprites: null == sprites
+      sprites: freezed == sprites
           ? _value.sprites
           : sprites // ignore: cast_nullable_to_non_nullable
-              as PokemonSprites,
+              as PokemonSprites?,
+      abilities: freezed == abilities
+          ? _value.abilities
+          : abilities // ignore: cast_nullable_to_non_nullable
+              as List<Abilities>?,
+      stats: freezed == stats
+          ? _value.stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as List<Stats>?,
+      types: freezed == types
+          ? _value.types
+          : types // ignore: cast_nullable_to_non_nullable
+              as List<Types>?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      order: freezed == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int?,
+      height: freezed == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int?,
+      weight: freezed == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      baseExperience: freezed == baseExperience
+          ? _value.baseExperience
+          : baseExperience // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isDefault: freezed == isDefault
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PokemonSpritesCopyWith<$Res> get sprites {
-    return $PokemonSpritesCopyWith<$Res>(_value.sprites, (value) {
+  $PokemonSpritesCopyWith<$Res>? get sprites {
+    if (_value.sprites == null) {
+      return null;
+    }
+
+    return $PokemonSpritesCopyWith<$Res>(_value.sprites!, (value) {
       return _then(_value.copyWith(sprites: value) as $Val);
     });
   }
@@ -91,10 +156,21 @@ abstract class _$$_PokemonDataResponseCopyWith<$Res>
       __$$_PokemonDataResponseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, int order, PokemonSprites sprites});
+  $Res call(
+      {PokemonSprites? sprites,
+      List<Abilities>? abilities,
+      List<Stats>? stats,
+      List<Types>? types,
+      int? id,
+      int? order,
+      int? height,
+      int? weight,
+      String? name,
+      @JsonKey(name: 'base_experience') int? baseExperience,
+      @JsonKey(name: 'is_default') bool? isDefault});
 
   @override
-  $PokemonSpritesCopyWith<$Res> get sprites;
+  $PokemonSpritesCopyWith<$Res>? get sprites;
 }
 
 /// @nodoc
@@ -108,23 +184,63 @@ class __$$_PokemonDataResponseCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? order = null,
-    Object? sprites = null,
+    Object? sprites = freezed,
+    Object? abilities = freezed,
+    Object? stats = freezed,
+    Object? types = freezed,
+    Object? id = freezed,
+    Object? order = freezed,
+    Object? height = freezed,
+    Object? weight = freezed,
+    Object? name = freezed,
+    Object? baseExperience = freezed,
+    Object? isDefault = freezed,
   }) {
     return _then(_$_PokemonDataResponse(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
-              as int,
-      sprites: null == sprites
+      sprites: freezed == sprites
           ? _value.sprites
           : sprites // ignore: cast_nullable_to_non_nullable
-              as PokemonSprites,
+              as PokemonSprites?,
+      abilities: freezed == abilities
+          ? _value._abilities
+          : abilities // ignore: cast_nullable_to_non_nullable
+              as List<Abilities>?,
+      stats: freezed == stats
+          ? _value._stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as List<Stats>?,
+      types: freezed == types
+          ? _value._types
+          : types // ignore: cast_nullable_to_non_nullable
+              as List<Types>?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      order: freezed == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int?,
+      height: freezed == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int?,
+      weight: freezed == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      baseExperience: freezed == baseExperience
+          ? _value.baseExperience
+          : baseExperience // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isDefault: freezed == isDefault
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -133,21 +249,76 @@ class __$$_PokemonDataResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PokemonDataResponse implements _PokemonDataResponse {
   const _$_PokemonDataResponse(
-      {required this.name, required this.order, required this.sprites});
+      {this.sprites,
+      final List<Abilities>? abilities,
+      final List<Stats>? stats,
+      final List<Types>? types,
+      this.id,
+      this.order,
+      this.height,
+      this.weight,
+      this.name,
+      @JsonKey(name: 'base_experience') this.baseExperience,
+      @JsonKey(name: 'is_default') this.isDefault})
+      : _abilities = abilities,
+        _stats = stats,
+        _types = types;
 
   factory _$_PokemonDataResponse.fromJson(Map<String, dynamic> json) =>
       _$$_PokemonDataResponseFromJson(json);
 
   @override
-  final String name;
+  final PokemonSprites? sprites;
+  final List<Abilities>? _abilities;
   @override
-  final int order;
+  List<Abilities>? get abilities {
+    final value = _abilities;
+    if (value == null) return null;
+    if (_abilities is EqualUnmodifiableListView) return _abilities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Stats>? _stats;
   @override
-  final PokemonSprites sprites;
+  List<Stats>? get stats {
+    final value = _stats;
+    if (value == null) return null;
+    if (_stats is EqualUnmodifiableListView) return _stats;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Types>? _types;
+  @override
+  List<Types>? get types {
+    final value = _types;
+    if (value == null) return null;
+    if (_types is EqualUnmodifiableListView) return _types;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final int? id;
+  @override
+  final int? order;
+  @override
+  final int? height;
+  @override
+  final int? weight;
+  @override
+  final String? name;
+  @override
+  @JsonKey(name: 'base_experience')
+  final int? baseExperience;
+  @override
+  @JsonKey(name: 'is_default')
+  final bool? isDefault;
 
   @override
   String toString() {
-    return 'PokemonDataResponse(name: $name, order: $order, sprites: $sprites)';
+    return 'PokemonDataResponse(sprites: $sprites, abilities: $abilities, stats: $stats, types: $types, id: $id, order: $order, height: $height, weight: $weight, name: $name, baseExperience: $baseExperience, isDefault: $isDefault)';
   }
 
   @override
@@ -155,14 +326,37 @@ class _$_PokemonDataResponse implements _PokemonDataResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PokemonDataResponse &&
-            (identical(other.name, name) || other.name == name) &&
+            (identical(other.sprites, sprites) || other.sprites == sprites) &&
+            const DeepCollectionEquality()
+                .equals(other._abilities, _abilities) &&
+            const DeepCollectionEquality().equals(other._stats, _stats) &&
+            const DeepCollectionEquality().equals(other._types, _types) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.order, order) || other.order == order) &&
-            (identical(other.sprites, sprites) || other.sprites == sprites));
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.weight, weight) || other.weight == weight) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.baseExperience, baseExperience) ||
+                other.baseExperience == baseExperience) &&
+            (identical(other.isDefault, isDefault) ||
+                other.isDefault == isDefault));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, order, sprites);
+  int get hashCode => Object.hash(
+      runtimeType,
+      sprites,
+      const DeepCollectionEquality().hash(_abilities),
+      const DeepCollectionEquality().hash(_stats),
+      const DeepCollectionEquality().hash(_types),
+      id,
+      order,
+      height,
+      weight,
+      name,
+      baseExperience,
+      isDefault);
 
   @JsonKey(ignore: true)
   @override
@@ -181,19 +375,46 @@ class _$_PokemonDataResponse implements _PokemonDataResponse {
 
 abstract class _PokemonDataResponse implements PokemonDataResponse {
   const factory _PokemonDataResponse(
-      {required final String name,
-      required final int order,
-      required final PokemonSprites sprites}) = _$_PokemonDataResponse;
+          {final PokemonSprites? sprites,
+          final List<Abilities>? abilities,
+          final List<Stats>? stats,
+          final List<Types>? types,
+          final int? id,
+          final int? order,
+          final int? height,
+          final int? weight,
+          final String? name,
+          @JsonKey(name: 'base_experience') final int? baseExperience,
+          @JsonKey(name: 'is_default') final bool? isDefault}) =
+      _$_PokemonDataResponse;
 
   factory _PokemonDataResponse.fromJson(Map<String, dynamic> json) =
       _$_PokemonDataResponse.fromJson;
 
   @override
-  String get name;
+  PokemonSprites? get sprites;
   @override
-  int get order;
+  List<Abilities>? get abilities;
   @override
-  PokemonSprites get sprites;
+  List<Stats>? get stats;
+  @override
+  List<Types>? get types;
+  @override
+  int? get id;
+  @override
+  int? get order;
+  @override
+  int? get height;
+  @override
+  int? get weight;
+  @override
+  String? get name;
+  @override
+  @JsonKey(name: 'base_experience')
+  int? get baseExperience;
+  @override
+  @JsonKey(name: 'is_default')
+  bool? get isDefault;
   @override
   @JsonKey(ignore: true)
   _$$_PokemonDataResponseCopyWith<_$_PokemonDataResponse> get copyWith =>

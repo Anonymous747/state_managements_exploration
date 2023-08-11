@@ -7,9 +7,17 @@ part 'pokemon_data_response.freezed.dart';
 @freezed
 class PokemonDataResponse with _$PokemonDataResponse {
   const factory PokemonDataResponse({
-    required String name,
-    required int order,
-    required PokemonSprites sprites,
+    PokemonSprites? sprites,
+    List<Abilities>? abilities,
+    List<Stats>? stats,
+    List<Types>? types,
+    int? id,
+    int? order,
+    int? height,
+    int? weight,
+    String? name,
+    @JsonKey(name: 'base_experience') int? baseExperience,
+    @JsonKey(name: 'is_default') bool? isDefault,
   }) = _PokemonDataResponse;
 
   factory PokemonDataResponse.fromJson(Map<String, dynamic> json) =>
