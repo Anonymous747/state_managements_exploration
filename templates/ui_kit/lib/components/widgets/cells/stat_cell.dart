@@ -81,8 +81,8 @@ class _StatCellState extends State<StatCell>
                 final labelWidth = width * widget.maxWeight * progress;
                 final points = ((widget.weight ?? 0) * progress).round();
 
-                final isAbilityNameDisplayed = _animation.value > 0.5;
-                final isPointsDisplayed = _animation.value > 0.3;
+                final isAbilityNameDisplayed = _animation.value > 0.6;
+                final isPointsDisplayed = _animation.value > 0.4;
 
                 return Container(
                   height: _cellHeight,
@@ -93,21 +93,28 @@ class _StatCellState extends State<StatCell>
                       borderRadius: BorderRadius.circular(16)),
                   child: Row(
                     children: [
-                      Expanded(
+                      if (isAbilityNameDisplayed)
+                        Expanded(
                           child: AnimatedOpacity(
-                        duration: const Duration(milliseconds: 500),
-                        opacity: isAbilityNameDisplayed ? 1 : 0,
-                        child: Text(
-                          formattedName,
-                          style: TextStyles.regularNormalStyle(
-                              fontWeight: FontWeight.w600),
+                            duration: const Duration(milliseconds: 500),
+                            opacity: isAbilityNameDisplayed ? 1 : 0,
+                            child: Text(
+                              formattedName,
+                              style: TextStyles.regularNormalStyle(
+                                fontWeight: FontWeight.w600,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ),
                         ),
-                      )),
-                      AnimatedOpacity(
-                        duration: const Duration(milliseconds: 500),
-                        opacity: isPointsDisplayed ? 1 : 0,
-                        child: Text('$points'),
-                      ),
+                      if (isPointsDisplayed)
+                        AnimatedOpacity(
+                          duration: const Duration(milliseconds: 500),
+                          opacity: isPointsDisplayed ? 1 : 0,
+                          child: Text(
+                            '$points',
+                          ),
+                        ),
                     ],
                   ),
                 );
