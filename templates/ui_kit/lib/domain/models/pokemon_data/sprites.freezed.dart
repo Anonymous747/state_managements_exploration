@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'pokemon_sprites.dart';
+part of 'sprites.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-PokemonSprites _$PokemonSpritesFromJson(Map<String, dynamic> json) {
-  return _PokemonSprites.fromJson(json);
+Sprites _$SpritesFromJson(Map<String, dynamic> json) {
+  return _Sprites.fromJson(json);
 }
 
 /// @nodoc
-mixin _$PokemonSprites {
+mixin _$Sprites {
   @JsonKey(name: 'back_default')
   String? get backDefault => throw _privateConstructorUsedError;
   @JsonKey(name: 'back_female')
@@ -39,15 +39,13 @@ mixin _$PokemonSprites {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PokemonSpritesCopyWith<PokemonSprites> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SpritesCopyWith<Sprites> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PokemonSpritesCopyWith<$Res> {
-  factory $PokemonSpritesCopyWith(
-          PokemonSprites value, $Res Function(PokemonSprites) then) =
-      _$PokemonSpritesCopyWithImpl<$Res, PokemonSprites>;
+abstract class $SpritesCopyWith<$Res> {
+  factory $SpritesCopyWith(Sprites value, $Res Function(Sprites) then) =
+      _$SpritesCopyWithImpl<$Res, Sprites>;
   @useResult
   $Res call(
       {@JsonKey(name: 'back_default') String? backDefault,
@@ -61,9 +59,9 @@ abstract class $PokemonSpritesCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PokemonSpritesCopyWithImpl<$Res, $Val extends PokemonSprites>
-    implements $PokemonSpritesCopyWith<$Res> {
-  _$PokemonSpritesCopyWithImpl(this._value, this._then);
+class _$SpritesCopyWithImpl<$Res, $Val extends Sprites>
+    implements $SpritesCopyWith<$Res> {
+  _$SpritesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -120,11 +118,10 @@ class _$PokemonSpritesCopyWithImpl<$Res, $Val extends PokemonSprites>
 }
 
 /// @nodoc
-abstract class _$$_PokemonSpritesCopyWith<$Res>
-    implements $PokemonSpritesCopyWith<$Res> {
-  factory _$$_PokemonSpritesCopyWith(
-          _$_PokemonSprites value, $Res Function(_$_PokemonSprites) then) =
-      __$$_PokemonSpritesCopyWithImpl<$Res>;
+abstract class _$$_SpritesCopyWith<$Res> implements $SpritesCopyWith<$Res> {
+  factory _$$_SpritesCopyWith(
+          _$_Sprites value, $Res Function(_$_Sprites) then) =
+      __$$_SpritesCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -139,11 +136,10 @@ abstract class _$$_PokemonSpritesCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PokemonSpritesCopyWithImpl<$Res>
-    extends _$PokemonSpritesCopyWithImpl<$Res, _$_PokemonSprites>
-    implements _$$_PokemonSpritesCopyWith<$Res> {
-  __$$_PokemonSpritesCopyWithImpl(
-      _$_PokemonSprites _value, $Res Function(_$_PokemonSprites) _then)
+class __$$_SpritesCopyWithImpl<$Res>
+    extends _$SpritesCopyWithImpl<$Res, _$_Sprites>
+    implements _$$_SpritesCopyWith<$Res> {
+  __$$_SpritesCopyWithImpl(_$_Sprites _value, $Res Function(_$_Sprites) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -158,7 +154,7 @@ class __$$_PokemonSpritesCopyWithImpl<$Res>
     Object? frontShiny = freezed,
     Object? frontShinyFemale = freezed,
   }) {
-    return _then(_$_PokemonSprites(
+    return _then(_$_Sprites(
       backDefault: freezed == backDefault
           ? _value.backDefault
           : backDefault // ignore: cast_nullable_to_non_nullable
@@ -197,8 +193,8 @@ class __$$_PokemonSpritesCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PokemonSprites implements _PokemonSprites {
-  const _$_PokemonSprites(
+class _$_Sprites implements _Sprites {
+  const _$_Sprites(
       {@JsonKey(name: 'back_default') this.backDefault,
       @JsonKey(name: 'back_female') this.backFemale,
       @JsonKey(name: 'back_shiny') this.backShiny,
@@ -208,8 +204,8 @@ class _$_PokemonSprites implements _PokemonSprites {
       @JsonKey(name: 'front_shiny') this.frontShiny,
       @JsonKey(name: 'front_shiny_female') this.frontShinyFemale});
 
-  factory _$_PokemonSprites.fromJson(Map<String, dynamic> json) =>
-      _$$_PokemonSpritesFromJson(json);
+  factory _$_Sprites.fromJson(Map<String, dynamic> json) =>
+      _$$_SpritesFromJson(json);
 
   @override
   @JsonKey(name: 'back_default')
@@ -238,14 +234,14 @@ class _$_PokemonSprites implements _PokemonSprites {
 
   @override
   String toString() {
-    return 'PokemonSprites(backDefault: $backDefault, backFemale: $backFemale, backShiny: $backShiny, backShinyFemale: $backShinyFemale, frontDefault: $frontDefault, frontFemale: $frontFemale, frontShiny: $frontShiny, frontShinyFemale: $frontShinyFemale)';
+    return 'Sprites(backDefault: $backDefault, backFemale: $backFemale, backShiny: $backShiny, backShinyFemale: $backShinyFemale, frontDefault: $frontDefault, frontFemale: $frontFemale, frontShiny: $frontShiny, frontShinyFemale: $frontShinyFemale)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PokemonSprites &&
+            other is _$_Sprites &&
             (identical(other.backDefault, backDefault) ||
                 other.backDefault == backDefault) &&
             (identical(other.backFemale, backFemale) ||
@@ -280,19 +276,19 @@ class _$_PokemonSprites implements _PokemonSprites {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PokemonSpritesCopyWith<_$_PokemonSprites> get copyWith =>
-      __$$_PokemonSpritesCopyWithImpl<_$_PokemonSprites>(this, _$identity);
+  _$$_SpritesCopyWith<_$_Sprites> get copyWith =>
+      __$$_SpritesCopyWithImpl<_$_Sprites>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PokemonSpritesToJson(
+    return _$$_SpritesToJson(
       this,
     );
   }
 }
 
-abstract class _PokemonSprites implements PokemonSprites {
-  const factory _PokemonSprites(
+abstract class _Sprites implements Sprites {
+  const factory _Sprites(
       {@JsonKey(name: 'back_default') final String? backDefault,
       @JsonKey(name: 'back_female') final String? backFemale,
       @JsonKey(name: 'back_shiny') final String? backShiny,
@@ -301,10 +297,9 @@ abstract class _PokemonSprites implements PokemonSprites {
       @JsonKey(name: 'front_female') final String? frontFemale,
       @JsonKey(name: 'front_shiny') final String? frontShiny,
       @JsonKey(name: 'front_shiny_female')
-      final String? frontShinyFemale}) = _$_PokemonSprites;
+      final String? frontShinyFemale}) = _$_Sprites;
 
-  factory _PokemonSprites.fromJson(Map<String, dynamic> json) =
-      _$_PokemonSprites.fromJson;
+  factory _Sprites.fromJson(Map<String, dynamic> json) = _$_Sprites.fromJson;
 
   @override
   @JsonKey(name: 'back_default')
@@ -332,6 +327,6 @@ abstract class _PokemonSprites implements PokemonSprites {
   String? get frontShinyFemale;
   @override
   @JsonKey(ignore: true)
-  _$$_PokemonSpritesCopyWith<_$_PokemonSprites> get copyWith =>
+  _$$_SpritesCopyWith<_$_Sprites> get copyWith =>
       throw _privateConstructorUsedError;
 }

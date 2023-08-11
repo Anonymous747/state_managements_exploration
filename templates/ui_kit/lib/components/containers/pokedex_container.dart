@@ -5,10 +5,8 @@ import 'package:ui_kit/domain/domain.dart';
 class PokedexContainer extends StatelessWidget {
   final List<PokemonBaseViewModel> pokemons;
   final Widget Function({required String name}) namedCellBuilder;
-  final String title;
 
   const PokedexContainer({
-    required this.title,
     required this.pokemons,
     required this.namedCellBuilder,
     Key? key,

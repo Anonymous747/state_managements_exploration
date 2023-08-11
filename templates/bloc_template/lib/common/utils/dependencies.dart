@@ -6,4 +6,5 @@ final _getIt = GetIt.instance;
 initBlocDependencies() {
   _getIt.registerFactory(() => PokedexCubit(_getIt.get()));
   _getIt.registerFactory(() => PokemonCellCubit(_getIt.get()));
+  _getIt.registerFactory(() => PokemonStatsCubit());
 }

@@ -11,7 +11,7 @@ _$_PokemonDataResponse _$$_PokemonDataResponseFromJson(
     _$_PokemonDataResponse(
       sprites: json['sprites'] == null
           ? null
-          : PokemonSprites.fromJson(json['sprites'] as Map<String, dynamic>),
+          : Sprites.fromJson(json['sprites'] as Map<String, dynamic>),
       abilities: (json['abilities'] as List<dynamic>?)
           ?.map((e) => Abilities.fromJson(e as Map<String, dynamic>))
           .toList(),

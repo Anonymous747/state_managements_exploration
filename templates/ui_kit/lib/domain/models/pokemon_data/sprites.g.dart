@@ -1,13 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'pokemon_sprites.dart';
+part of 'sprites.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PokemonSprites _$$_PokemonSpritesFromJson(Map<String, dynamic> json) =>
-    _$_PokemonSprites(
+_$_Sprites _$$_SpritesFromJson(Map<String, dynamic> json) => _$_Sprites(
       backDefault: json['back_default'] as String?,
       backFemale: json['back_female'] as String?,
       backShiny: json['back_shiny'] as String?,
@@ -18,7 +17,7 @@ _$_PokemonSprites _$$_PokemonSpritesFromJson(Map<String, dynamic> json) =>
       frontShinyFemale: json['front_shiny_female'] as String?,
     );
 
-Map<String, dynamic> _$$_PokemonSpritesToJson(_$_PokemonSprites instance) =>
+Map<String, dynamic> _$$_SpritesToJson(_$_Sprites instance) =>
     <String, dynamic>{
       'back_default': instance.backDefault,
       'back_female': instance.backFemale,

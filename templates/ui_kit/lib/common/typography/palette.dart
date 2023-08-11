@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Palette {
   static const Color light = Color(0xFFFFFFFF);
+  static const Color dark = Color(0xFF000000);
 
   static const Color purple200 = Color(0xFFE1B1FF);
   static const Color purple300 = Color(0xFFE1B3D1);

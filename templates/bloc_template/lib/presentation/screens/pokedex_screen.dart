@@ -23,7 +23,6 @@ class PokedexScreen extends StatelessWidget {
               ),
               loaded: (loadedState) {
                 return PokedexContainer(
-                  title: 'Bloc Implementation',
                   pokemons: loadedState.viewModels,
                   namedCellBuilder: ({
                     required String name,
@@ -45,9 +44,15 @@ class PokedexScreen extends StatelessWidget {
                               error: (error) =>
                                   const Center(child: Text("Error")),
                               loaded: (loadedState) {
-                                return PokemonCell(
-                                  pokemon: loadedState.viewModel,
-                                  margin: const EdgeInsets.all(12),
+                                return GestureDetector(
+                                  onTap: () => navigateToStats(
+                                    context,
+                                    loadedState.viewModel,
+                                  ),
+                                  child: PokemonCell(
+                                    pokemon: loadedState.viewModel,
+                                    margin: const EdgeInsets.all(12),
+                                  ),
                                 );
                               },
                             );
@@ -61,5 +66,18 @@ class PokedexScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  /// In the version I like, this method should be placed
+  /// inside a bloc. This can be achieved with a global
+  /// navigation key, however can't be shown elegantly
+  /// in a multi-model system like this.
+  ///
+  void navigateToStats(BuildContext context, PokemonViewModel viewModel) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => PokemonStatsScreen(viewModel: viewModel),
+        ));
   }
 }

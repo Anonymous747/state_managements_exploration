@@ -20,7 +20,7 @@ PokemonDataResponse _$PokemonDataResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PokemonDataResponse {
-  PokemonSprites? get sprites => throw _privateConstructorUsedError;
+  Sprites? get sprites => throw _privateConstructorUsedError;
   List<Abilities>? get abilities => throw _privateConstructorUsedError;
   List<Stats>? get stats => throw _privateConstructorUsedError;
   List<Types>? get types => throw _privateConstructorUsedError;
@@ -47,7 +47,7 @@ abstract class $PokemonDataResponseCopyWith<$Res> {
       _$PokemonDataResponseCopyWithImpl<$Res, PokemonDataResponse>;
   @useResult
   $Res call(
-      {PokemonSprites? sprites,
+      {Sprites? sprites,
       List<Abilities>? abilities,
       List<Stats>? stats,
       List<Types>? types,
@@ -59,7 +59,7 @@ abstract class $PokemonDataResponseCopyWith<$Res> {
       @JsonKey(name: 'base_experience') int? baseExperience,
       @JsonKey(name: 'is_default') bool? isDefault});
 
-  $PokemonSpritesCopyWith<$Res>? get sprites;
+  $SpritesCopyWith<$Res>? get sprites;
 }
 
 /// @nodoc
@@ -91,7 +91,7 @@ class _$PokemonDataResponseCopyWithImpl<$Res, $Val extends PokemonDataResponse>
       sprites: freezed == sprites
           ? _value.sprites
           : sprites // ignore: cast_nullable_to_non_nullable
-              as PokemonSprites?,
+              as Sprites?,
       abilities: freezed == abilities
           ? _value.abilities
           : abilities // ignore: cast_nullable_to_non_nullable
@@ -137,12 +137,12 @@ class _$PokemonDataResponseCopyWithImpl<$Res, $Val extends PokemonDataResponse>
 
   @override
   @pragma('vm:prefer-inline')
-  $PokemonSpritesCopyWith<$Res>? get sprites {
+  $SpritesCopyWith<$Res>? get sprites {
     if (_value.sprites == null) {
       return null;
     }
 
-    return $PokemonSpritesCopyWith<$Res>(_value.sprites!, (value) {
+    return $SpritesCopyWith<$Res>(_value.sprites!, (value) {
       return _then(_value.copyWith(sprites: value) as $Val);
     });
   }
@@ -157,7 +157,7 @@ abstract class _$$_PokemonDataResponseCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {PokemonSprites? sprites,
+      {Sprites? sprites,
       List<Abilities>? abilities,
       List<Stats>? stats,
       List<Types>? types,
@@ -170,7 +170,7 @@ abstract class _$$_PokemonDataResponseCopyWith<$Res>
       @JsonKey(name: 'is_default') bool? isDefault});
 
   @override
-  $PokemonSpritesCopyWith<$Res>? get sprites;
+  $SpritesCopyWith<$Res>? get sprites;
 }
 
 /// @nodoc
@@ -200,7 +200,7 @@ class __$$_PokemonDataResponseCopyWithImpl<$Res>
       sprites: freezed == sprites
           ? _value.sprites
           : sprites // ignore: cast_nullable_to_non_nullable
-              as PokemonSprites?,
+              as Sprites?,
       abilities: freezed == abilities
           ? _value._abilities
           : abilities // ignore: cast_nullable_to_non_nullable
@@ -268,7 +268,7 @@ class _$_PokemonDataResponse implements _PokemonDataResponse {
       _$$_PokemonDataResponseFromJson(json);
 
   @override
-  final PokemonSprites? sprites;
+  final Sprites? sprites;
   final List<Abilities>? _abilities;
   @override
   List<Abilities>? get abilities {
@@ -375,7 +375,7 @@ class _$_PokemonDataResponse implements _PokemonDataResponse {
 
 abstract class _PokemonDataResponse implements PokemonDataResponse {
   const factory _PokemonDataResponse(
-          {final PokemonSprites? sprites,
+          {final Sprites? sprites,
           final List<Abilities>? abilities,
           final List<Stats>? stats,
           final List<Types>? types,
@@ -392,7 +392,7 @@ abstract class _PokemonDataResponse implements PokemonDataResponse {
       _$_PokemonDataResponse.fromJson;
 
   @override
-  PokemonSprites? get sprites;
+  Sprites? get sprites;
   @override
   List<Abilities>? get abilities;
   @override

@@ -7,7 +7,7 @@ part 'pokemon_data_response.freezed.dart';
 @freezed
 class PokemonDataResponse with _$PokemonDataResponse {
   const factory PokemonDataResponse({
-    PokemonSprites? sprites,
+    Sprites? sprites,
     List<Abilities>? abilities,
     List<Stats>? stats,
     List<Types>? types,

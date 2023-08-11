@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'pokemon_sprites.g.dart';
-part 'pokemon_sprites.freezed.dart';
+part 'sprites.g.dart';
+part 'sprites.freezed.dart';
 
 @freezed
-class PokemonSprites with _$PokemonSprites {
-  const factory PokemonSprites({
+class Sprites with _$Sprites {
+  const factory Sprites({
     @JsonKey(name: 'back_default') String? backDefault,
     @JsonKey(name: 'back_female') String? backFemale,
     @JsonKey(name: 'back_shiny') String? backShiny,
@@ -14,8 +14,8 @@ class PokemonSprites with _$PokemonSprites {
     @JsonKey(name: 'front_female') String? frontFemale,
     @JsonKey(name: 'front_shiny') String? frontShiny,
     @JsonKey(name: 'front_shiny_female') String? frontShinyFemale,
-  }) = _PokemonSprites;
+  }) = _Sprites;
 
-  factory PokemonSprites.fromJson(Map<String, dynamic> json) =>
-      _$PokemonSpritesFromJson(json);
+  factory Sprites.fromJson(Map<String, dynamic> json) =>
+      _$SpritesFromJson(json);
 }

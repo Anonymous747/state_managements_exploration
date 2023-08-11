@@ -5,6 +5,9 @@ class PokemonCellMapper {
     return PokemonViewModel(
       name: model.name ?? '',
       imageUrl: model.sprites?.frontDefault ?? model.sprites?.frontShiny ?? '',
+      id: model.id,
+      abilities:
+          model.abilities?.map((ability) => ability.ability).toList() ?? [],
       color: Palette.purple700,
     );
   }

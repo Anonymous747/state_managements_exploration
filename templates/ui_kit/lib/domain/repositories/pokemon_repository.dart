@@ -23,7 +23,7 @@ class PokemonRepository {
           return;
         }
 
-        onSuccess(r!);
+        onSuccess(r);
       },
     );
   }
@@ -33,8 +33,6 @@ class PokemonRepository {
     required void Function(String) onError,
   }) async {
     final response = await _pokemonService.getPokemons();
-
-    print('repository getPokemons = response = $response');
 
     return response.fold((l) {
       onError(_generalErrorMessage);
