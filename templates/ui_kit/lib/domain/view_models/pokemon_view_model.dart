@@ -11,6 +11,7 @@ class PokemonViewModel with _$PokemonViewModel {
     required String imageUrl,
     @Default(0) int? id,
     @Default([]) List<Ability?> abilities,
+    @Default([]) List<Stats>? stats,
     @Default(Palette.blue900) Color color,
   }) = _PokemonViewModel;
 }

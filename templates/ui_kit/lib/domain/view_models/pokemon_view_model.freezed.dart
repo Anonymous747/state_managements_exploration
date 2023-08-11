@@ -20,6 +20,7 @@ mixin _$PokemonViewModel {
   String get imageUrl => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
   List<Ability?> get abilities => throw _privateConstructorUsedError;
+  List<Stats>? get stats => throw _privateConstructorUsedError;
   Color get color => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -38,6 +39,7 @@ abstract class $PokemonViewModelCopyWith<$Res> {
       String imageUrl,
       int? id,
       List<Ability?> abilities,
+      List<Stats>? stats,
       Color color});
 }
 
@@ -58,6 +60,7 @@ class _$PokemonViewModelCopyWithImpl<$Res, $Val extends PokemonViewModel>
     Object? imageUrl = null,
     Object? id = freezed,
     Object? abilities = null,
+    Object? stats = freezed,
     Object? color = null,
   }) {
     return _then(_value.copyWith(
@@ -77,6 +80,10 @@ class _$PokemonViewModelCopyWithImpl<$Res, $Val extends PokemonViewModel>
           ? _value.abilities
           : abilities // ignore: cast_nullable_to_non_nullable
               as List<Ability?>,
+      stats: freezed == stats
+          ? _value.stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as List<Stats>?,
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -98,6 +105,7 @@ abstract class _$$_PokemonViewModelCopyWith<$Res>
       String imageUrl,
       int? id,
       List<Ability?> abilities,
+      List<Stats>? stats,
       Color color});
 }
 
@@ -116,6 +124,7 @@ class __$$_PokemonViewModelCopyWithImpl<$Res>
     Object? imageUrl = null,
     Object? id = freezed,
     Object? abilities = null,
+    Object? stats = freezed,
     Object? color = null,
   }) {
     return _then(_$_PokemonViewModel(
@@ -135,6 +144,10 @@ class __$$_PokemonViewModelCopyWithImpl<$Res>
           ? _value._abilities
           : abilities // ignore: cast_nullable_to_non_nullable
               as List<Ability?>,
+      stats: freezed == stats
+          ? _value._stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as List<Stats>?,
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -151,8 +164,10 @@ class _$_PokemonViewModel implements _PokemonViewModel {
       required this.imageUrl,
       this.id = 0,
       final List<Ability?> abilities = const [],
+      final List<Stats>? stats = const [],
       this.color = Palette.blue900})
-      : _abilities = abilities;
+      : _abilities = abilities,
+        _stats = stats;
 
   @override
   final String name;
@@ -170,13 +185,24 @@ class _$_PokemonViewModel implements _PokemonViewModel {
     return EqualUnmodifiableListView(_abilities);
   }
 
+  final List<Stats>? _stats;
+  @override
+  @JsonKey()
+  List<Stats>? get stats {
+    final value = _stats;
+    if (value == null) return null;
+    if (_stats is EqualUnmodifiableListView) return _stats;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey()
   final Color color;
 
   @override
   String toString() {
-    return 'PokemonViewModel(name: $name, imageUrl: $imageUrl, id: $id, abilities: $abilities, color: $color)';
+    return 'PokemonViewModel(name: $name, imageUrl: $imageUrl, id: $id, abilities: $abilities, stats: $stats, color: $color)';
   }
 
   @override
@@ -190,12 +216,19 @@ class _$_PokemonViewModel implements _PokemonViewModel {
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality()
                 .equals(other._abilities, _abilities) &&
+            const DeepCollectionEquality().equals(other._stats, _stats) &&
             (identical(other.color, color) || other.color == color));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, imageUrl, id,
-      const DeepCollectionEquality().hash(_abilities), color);
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      imageUrl,
+      id,
+      const DeepCollectionEquality().hash(_abilities),
+      const DeepCollectionEquality().hash(_stats),
+      color);
 
   @JsonKey(ignore: true)
   @override
@@ -210,6 +243,7 @@ abstract class _PokemonViewModel implements PokemonViewModel {
       required final String imageUrl,
       final int? id,
       final List<Ability?> abilities,
+      final List<Stats>? stats,
       final Color color}) = _$_PokemonViewModel;
 
   @override
@@ -220,6 +254,8 @@ abstract class _PokemonViewModel implements PokemonViewModel {
   int? get id;
   @override
   List<Ability?> get abilities;
+  @override
+  List<Stats>? get stats;
   @override
   Color get color;
   @override

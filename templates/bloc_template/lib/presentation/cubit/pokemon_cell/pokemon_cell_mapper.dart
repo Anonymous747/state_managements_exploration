@@ -8,6 +8,7 @@ class PokemonCellMapper {
       id: model.id,
       abilities:
           model.abilities?.map((ability) => ability.ability).toList() ?? [],
+      stats: model.stats,
       color: Palette.purple700,
     );
   }

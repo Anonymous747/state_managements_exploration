@@ -45,6 +45,8 @@ class PokemonStatsContainer extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Container(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               decoration: BoxDecoration(
                                 color: Palette.light,
                                 borderRadius: BorderRadius.circular(12),
@@ -60,12 +62,11 @@ class PokemonStatsContainer extends StatelessWidget {
                                     ),
                                   ),
                                   const SizedBox(height: 20),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20),
-                                    child: AbilityLabels(
-                                      abilities: viewModel.abilities,
-                                    ),
+                                  AbilityLabels(
+                                    abilities: viewModel.abilities,
+                                  ),
+                                  PokemonStats(
+                                    stats: viewModel.stats,
                                   ),
                                 ],
                               ),
