@@ -4,7 +4,7 @@ import 'package:ui_kit/common/common.dart';
 import 'package:ui_kit/domain/domain.dart';
 
 class PokemonCell extends StatelessWidget {
-  final PokemonViewModel pokemon;
+  final PokemonViewModel? pokemon;
   final EdgeInsets? margin;
 
   const PokemonCell({
@@ -19,7 +19,7 @@ class PokemonCell extends StatelessWidget {
       margin: margin,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [pokemon.color, Palette.light],
+          colors: [pokemon?.color ?? Palette.purple700, Palette.light],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -32,22 +32,27 @@ class PokemonCell extends StatelessWidget {
         ],
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: CachedNetworkImage(imageUrl: pokemon.imageUrl),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Text(
-              // TODO:
-              pokemon.name,
-              style: TextStyles.regularBigStyle(fontWeight: FontWeight.w500),
+      child: pokemon == null
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: CachedNetworkImage(imageUrl: pokemon!.imageUrl),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Text(
+                    // TODO:
+                    pokemon!.name,
+                    style:
+                        TextStyles.regularBigStyle(fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
     );
   }
 }

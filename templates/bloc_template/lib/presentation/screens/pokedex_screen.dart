@@ -38,8 +38,10 @@ class PokedexScreen extends StatelessWidget {
                             cellCubit.loadPokemon(name);
 
                             return state.map(
-                              loading: (_) => const Center(
-                                  child: CircularProgressIndicator()),
+                              loading: (_) => const PokemonCell(
+                                pokemon: null,
+                                margin: EdgeInsets.all(12),
+                              ),
                               error: (error) =>
                                   const Center(child: Text("Error")),
                               loaded: (loadedState) {

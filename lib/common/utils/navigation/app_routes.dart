@@ -1,4 +1,4 @@
-import 'package:state_managements_exploration/screens/select_management_screen.dart';
+import 'package:state_managements_exploration/presentation/screens/select_management_screen.dart';
 import 'package:bloc_template/bloc_template.dart' as bloc;
 
 final appRoutes = {

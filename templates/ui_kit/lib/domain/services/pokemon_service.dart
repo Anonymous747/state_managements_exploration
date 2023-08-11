@@ -12,11 +12,7 @@ class PokemonService {
     required String name,
   }) async {
     try {
-      print('========= pokemon path ${Endpoint.pokemon}/$name');
-
       final response = await _dio.get('${Endpoint.pokemon}/$name');
-
-      print('pokemon data response = ${response.data}');
 
       if (response.data == null) {
         return right(null);
@@ -24,12 +20,8 @@ class PokemonService {
 
       final pokemonModel = PokemonDataResponse.fromJson(response.data);
 
-      print('pokemon data responseModel = $pokemonModel');
-
       return right(pokemonModel);
     } on DioException catch (e) {
-      print('error PokemonService getPokemons e = $e');
-
       return left(e.response?.statusCode);
     }
   }
@@ -41,20 +33,14 @@ class PokemonService {
     try {
       final response = await _dio.get(Endpoint.pokemon);
 
-      print('response = ${response.data}');
-
       if (response.data == null) {
         return right(null);
       }
 
       final pokemonsModel = PokemonsResponse.fromJson(response.data);
 
-      print('responseModel = $pokemonsModel');
-
       return right(pokemonsModel);
     } on DioException catch (e) {
-      print('error PokemonService getPokemons e = $e');
-
       return left(e.response?.statusCode);
     }
   }
