@@ -1,48 +1,51 @@
+import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
+import 'package:ui_kit/common/common.dart';
 import 'package:ui_kit/domain/domain.dart';
 
-const _generalErrorMessage = 'Failed to fetch post. Try again later.';
-const _emptyListErrorMessage = 'The pokemons list is empty';
-
 class PokemonRepository {
-  final PokemonService _pokemonService;
+  final DioClient _dio;
 
-  const PokemonRepository(this._pokemonService);
+  const PokemonRepository(this._dio);
 
-  Future<void> getPokemonData({
+  Future<Either<int?, PokemonDataResponse?>> getPokemonData({
     required String name,
-    required void Function(PokemonDataResponse) onSuccess,
-    required void Function(String) onError,
   }) async {
-    final response = await _pokemonService.getPokemonData(name: name);
+    try {
+      final response = await _dio.get('${Endpoint.pokemon}/$name');
 
-    response.fold(
-      (l) => onError(_generalErrorMessage),
-      (r) {
-        if (r == null) {
-          onError(_generalErrorMessage);
-          return;
-        }
-
-        onSuccess(r);
-      },
-    );
-  }
-
-  Future<void> getPokemons({
-    required void Function(PokemonsResponse) onSuccess,
-    required void Function(String) onError,
-  }) async {
-    final response = await _pokemonService.getPokemons();
-
-    return response.fold((l) {
-      onError(_generalErrorMessage);
-    }, (r) {
-      if (r == null) {
-        onError(_emptyListErrorMessage);
-        return;
+      if (response.data == null) {
+        return right(null);
       }
 
-      onSuccess(r);
-    });
+      final pokemonModel = PokemonDataResponse.fromJson(response.data);
+
+      return right(pokemonModel);
+    } on DioException catch (e) {
+      return left(e.response?.statusCode);
+    }
+  }
+
+  Future<Either<int?, PokemonsResponse?>> getPokemons(
+    PokemonDataRequest request,
+  ) async {
+    final params = request.toJson();
+
+    try {
+      final response = await _dio.get(
+        Endpoint.pokemon,
+        queryParameters: params,
+      );
+
+      if (response.data == null) {
+        return right(null);
+      }
+
+      final pokemonsModel = PokemonsResponse.fromJson(response.data);
+
+      return right(pokemonsModel);
+    } on DioException catch (e) {
+      return left(e.response?.statusCode);
+    }
   }
 }

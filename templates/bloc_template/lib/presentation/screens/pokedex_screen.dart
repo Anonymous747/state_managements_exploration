@@ -10,10 +10,12 @@ class PokedexScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pokedexCubit = instanceOf<PokedexCubit>();
+
     return Scaffold(
       backgroundColor: Palette.blue300,
       body: BlocProvider<PokedexCubit>(
-        create: (context) => instanceOf<PokedexCubit>(),
+        create: (context) => pokedexCubit,
         child: BlocBuilder<PokedexCubit, PokedexState>(
           builder: (context, state) {
             return state.map(
@@ -24,33 +26,35 @@ class PokedexScreen extends StatelessWidget {
               loaded: (loadedState) {
                 return PokedexContainer(
                   pokemons: loadedState.viewModels,
+                  controller: pokedexCubit.scrollController,
                   namedCellBuilder: ({
                     required String name,
                   }) {
                     final cellCubit = instanceOf<PokemonCellCubit>();
 
+                    // Handling Pokemon list loading
                     return BlocProvider<PokemonCellCubit>(
                       create: (_) => cellCubit,
                       child: BlocBuilder<PokemonCellCubit, PokemonCellState>(
                           bloc: cellCubit,
-                          builder: (context, state) {
+                          builder: (context, cellState) {
                             cellCubit.loadPokemon(name);
 
-                            return state.map(
+                            return cellState.map(
                               loading: (_) => const PokemonCell(
                                 pokemon: null,
                                 margin: EdgeInsets.all(12),
                               ),
                               error: (error) =>
                                   const Center(child: Text("Error")),
-                              loaded: (loadedState) {
+                              loaded: (cellLoadedState) {
                                 return GestureDetector(
                                   onTap: () => navigateToStats(
                                     context,
-                                    loadedState.viewModel,
+                                    cellLoadedState.viewModel,
                                   ),
                                   child: PokemonCell(
-                                    pokemon: loadedState.viewModel,
+                                    pokemon: cellLoadedState.viewModel,
                                     margin: const EdgeInsets.all(12),
                                   ),
                                 );
@@ -59,6 +63,15 @@ class PokedexScreen extends StatelessWidget {
                           }),
                     );
                   },
+                  loadMoreBuilder: loadedState.isLoading
+                      ? (context) {
+                          return Container(
+                            alignment: Alignment.center,
+                            height: 40,
+                            child: const CircularProgressIndicator(),
+                          );
+                        }
+                      : null,
                 );
               },
             );

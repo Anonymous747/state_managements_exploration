@@ -13,6 +13,7 @@ class PokemonStatsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Palette.dark,
       body: SafeArea(
         child: Container(
           decoration: const BoxDecoration(

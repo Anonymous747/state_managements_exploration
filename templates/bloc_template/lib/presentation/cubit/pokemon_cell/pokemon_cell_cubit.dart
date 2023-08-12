@@ -7,15 +7,15 @@ part 'pokemon_cell_state.dart';
 part 'pokemon_cell_cubit.freezed.dart';
 
 class PokemonCellCubit extends Cubit<PokemonCellState> {
-  final PokemonRepository _pokemonRepository;
+  final PokemonService _pokemonService;
 
-  PokemonCellCubit(this._pokemonRepository)
+  PokemonCellCubit(this._pokemonService)
       : super(const PokemonCellState.loading());
 
   final _mapper = PokemonCellMapper();
 
   void loadPokemon(String name) {
-    _pokemonRepository.getPokemonData(
+    _pokemonService.getPokemonData(
         name: name,
         onSuccess: (model) {
           final viewModel = _mapper.toViewModel(model);
