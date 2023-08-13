@@ -6,13 +6,15 @@ const _searchHint = 'Search...';
 class PokedexContainer extends StatelessWidget {
   final List<PokemonBaseViewModel> pokemons;
   final Widget Function({required String name}) namedCellBuilder;
-  final ScrollController controller;
+  final ScrollController scrollController;
+  final TextEditingController searchController;
   final WidgetBuilder? loadMoreBuilder;
 
   const PokedexContainer({
     required this.pokemons,
     required this.namedCellBuilder,
-    required this.controller,
+    required this.scrollController,
+    required this.searchController,
     this.loadMoreBuilder,
     Key? key,
   }) : super(key: key);
@@ -30,9 +32,10 @@ class PokedexContainer extends StatelessWidget {
             const Center(
               child: PokemonLogo(),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: PokemonTextField(
+                controller: searchController,
                 hint: _searchHint,
                 borderRadius: 24,
               ),
@@ -43,7 +46,7 @@ class PokedexContainer extends StatelessWidget {
                 child: PokemonsList(
                   pokemons: pokemons,
                   namedCellBuilder: namedCellBuilder,
-                  controller: controller,
+                  controller: scrollController,
                 ),
               ),
             ),

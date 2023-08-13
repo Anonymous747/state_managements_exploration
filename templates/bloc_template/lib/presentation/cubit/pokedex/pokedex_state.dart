@@ -6,6 +6,7 @@ class PokedexState with _$PokedexState {
 
   const factory PokedexState.loaded({
     required List<PokemonBaseViewModel> viewModels,
+    @Default([]) List<PokemonBaseViewModel> suitableForSearch,
     @Default(false) bool isLoading,
   }) = _PokedexLoadedState;
 

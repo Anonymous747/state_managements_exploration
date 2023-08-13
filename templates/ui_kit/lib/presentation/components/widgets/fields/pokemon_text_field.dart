@@ -5,8 +5,10 @@ class PokemonTextField extends StatelessWidget {
   final String hint;
   final Color backgroundColor;
   final double? borderRadius;
+  final TextEditingController controller;
 
   const PokemonTextField({
+    required this.controller,
     this.hint = '',
     this.backgroundColor = Palette.light,
     this.borderRadius,
@@ -20,7 +22,8 @@ class PokemonTextField extends StatelessWidget {
       borderSide: const BorderSide(color: Palette.blue500),
     );
 
-    return TextField(
+    return TextFormField(
+      controller: controller,
       decoration: InputDecoration(
           border: border,
           enabledBorder: border,

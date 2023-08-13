@@ -13,6 +13,7 @@ class PokedexScreen extends StatelessWidget {
     final pokedexCubit = instanceOf<PokedexCubit>();
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Palette.blue300,
       body: BlocProvider<PokedexCubit>(
         create: (context) => pokedexCubit,
@@ -24,43 +25,19 @@ class PokedexScreen extends StatelessWidget {
                 child: Text(errorState.message),
               ),
               loaded: (loadedState) {
+                final isSearching = loadedState.suitableForSearch.isNotEmpty;
+                final pokemons = isSearching
+                    ? loadedState.suitableForSearch
+                    : loadedState.viewModels;
+
                 return PokedexContainer(
-                  pokemons: loadedState.viewModels,
-                  controller: pokedexCubit.scrollController,
-                  namedCellBuilder: ({
-                    required String name,
-                  }) {
-                    final cellCubit = instanceOf<PokemonCellCubit>();
-
-                    // Handling Pokemon list loading
-                    return BlocProvider<PokemonCellCubit>(
-                      create: (_) => cellCubit,
-                      child: BlocBuilder<PokemonCellCubit, PokemonCellState>(
-                          bloc: cellCubit,
-                          builder: (context, cellState) {
-                            cellCubit.loadPokemon(name);
-
-                            return cellState.map(
-                              loading: (_) => const PokemonCell(
-                                pokemon: null,
-                                margin: EdgeInsets.all(12),
-                              ),
-                              error: (error) =>
-                                  const Center(child: Text("Error")),
-                              loaded: (cellLoadedState) {
-                                return GestureDetector(
-                                  onTap: () => navigateToStats(
-                                    context,
-                                    cellLoadedState.viewModel,
-                                  ),
-                                  child: PokemonCell(
-                                    pokemon: cellLoadedState.viewModel,
-                                    margin: const EdgeInsets.all(12),
-                                  ),
-                                );
-                              },
-                            );
-                          }),
+                  pokemons: pokemons,
+                  scrollController: pokedexCubit.scrollController,
+                  searchController: pokedexCubit.searchController,
+                  namedCellBuilder: ({required String name}) {
+                    return PokedexBody(
+                      navigateToStats: navigateToStats,
+                      name: name,
                     );
                   },
                   loadMoreBuilder: loadedState.isLoading

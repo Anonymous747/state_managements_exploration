@@ -1,4 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:async';
+
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
 import 'package:ui_kit/ui_kit.dart';
@@ -15,11 +17,15 @@ class PokedexCubit extends Cubit<PokedexState> {
 
   final PokedexMapper _mapper = PokedexMapper();
   final scrollController = ScrollController();
+  final searchController = TextEditingController();
+
+  Timer? _timer;
 
   PokedexCubit(this._pokemonService) : super(const PokedexState.loading()) {
     _receivePokemons();
 
     scrollController.addListener(_paginationHandling);
+    searchController.addListener(_searchHandlng);
   }
 
   int offset = 20;
@@ -29,10 +35,36 @@ class PokedexCubit extends Cubit<PokedexState> {
       if (scrollController.position.maxScrollExtent ==
           scrollController.position.pixels) {
         offset += _limit;
+
         emit(loadState.copyWith(isLoading: true));
         _receivePokemons(limit: _limit, offset: offset);
       }
     });
+  }
+
+  void _searchHandlng() {
+    if (_timer != null) {
+      _timer!.cancel();
+    }
+
+    _timer = Timer(
+      const Duration(seconds: 2),
+      _searchPokemonByName,
+    );
+  }
+
+  void _searchPokemonByName() {
+    state.mapOrNull(loaded: (loadedState) {
+      final searchFragment = searchController.text;
+
+      final filteredList = loadedState.viewModels
+          .where((pokemon) => pokemon.name.contains(searchFragment))
+          .toList();
+
+      emit(loadedState.copyWith(suitableForSearch: filteredList));
+    });
+
+    // TODO: Implement pokemon searching and possibility to
   }
 
   Future<void> _receivePokemons({int limit = _limit, int offset = 0}) async {
@@ -69,7 +101,11 @@ class PokedexCubit extends Cubit<PokedexState> {
 
   @override
   Future<void> close() {
+    scrollController.removeListener(_paginationHandling);
+    searchController.removeListener(_searchHandlng);
+
     scrollController.dispose();
+    searchController.dispose();
 
     return super.close();
   }
