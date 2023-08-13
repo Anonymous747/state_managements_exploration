@@ -9,21 +9,36 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Stats screen and animation for it">
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_data_request.dart" afterDir="false" />
+    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Pokemons list pagination">
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/presentation.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_cubit.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_cubit.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokemon_cell/pokemon_cell_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokemon_cell/pokemon_cell_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/pokedex_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/pokedex_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/common.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/common.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/extensions/typedefs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/extensions/typedefs.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/pokedex_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/pokedex_container.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/pokemon_stats_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/pokemon_stats_container.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/list/pokemons_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/list/pokemons_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/domain/repositories/pokemon_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/repositories/pokemon_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/domain/services/pokemon_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/services/pokemon_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/utils/dependencies.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/dependencies.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/utils/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/utils/navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/navigation.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/components.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/containers/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/pokedex_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/containers/pokedex_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/containers/pokemon_stats_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/containers/pokemon_stats_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/buttons/flat_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/buttons/flat_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/buttons/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/buttons/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/cells/ability_cell.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/cells/ability_cell.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/cells/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/cells/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/cells/pokemon_cell.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/cells/pokemon_cell.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/cells/stat_cell.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/cells/stat_cell.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/fields/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/fields/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/fields/pokemon_text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/fields/pokemon_text_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/general/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/general/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/general/pokemon_logo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/general/pokemon_logo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/label/ability_labels.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/label/ability_labels.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/label/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/label/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/list/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/list/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/list/pokemon_stats.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/list/pokemon_stats.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/list/pokemons_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/list/pokemons_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/components/widgets/list/vertical_separated_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/list/vertical_separated_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/ui_kit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/ui_kit.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,17 +78,17 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/polyglot/polyglot" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../english_words" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\presentation" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\domain\models\pokemon_data" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\common\constants" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib" />
-      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\assets" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -186,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691772562723</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Pokemons list pagination">
+      <created>1691822737721</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1691822737721</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -222,6 +244,7 @@
     <MESSAGE value="Base pokemon data models" />
     <MESSAGE value="Part of pokemon details screen" />
     <MESSAGE value="Stats screen and animation for it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stats screen and animation for it" />
+    <MESSAGE value="Pokemons list pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pokemons list pagination" />
   </component>
 </project>

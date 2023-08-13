@@ -1,2 +1,2 @@
-export './navigation.dart';
+export 'navigation.dart';
 export './dependencies.dart';

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ui_kit/components/components.dart';
-import 'package:ui_kit/domain/domain.dart';
+import 'package:ui_kit/ui_kit.dart';
+
+const _searchHint = 'Search...';
 
 class PokedexContainer extends StatelessWidget {
   final List<PokemonBaseViewModel> pokemons;
@@ -32,7 +33,7 @@ class PokedexContainer extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: PokemonTextField(
-                hint: 'Search...',
+                hint: _searchHint,
                 borderRadius: 24,
               ),
             ),
