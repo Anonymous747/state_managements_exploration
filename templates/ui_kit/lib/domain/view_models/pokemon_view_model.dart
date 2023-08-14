@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 part 'pokemon_view_model.freezed.dart';
@@ -12,6 +11,6 @@ class PokemonViewModel with _$PokemonViewModel {
     @Default(0) int? id,
     @Default([]) List<Ability?> abilities,
     @Default([]) List<Stats>? stats,
-    @Default(Palette.blue900) Color color,
+    String? color,
   }) = _PokemonViewModel;
 }

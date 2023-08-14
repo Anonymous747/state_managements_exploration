@@ -23,3 +23,9 @@ class Palette {
 
   static const Color green = Color(0xFF2BF547);
 }
+
+extension ColorConverterExtension on String {
+  Color toColor() {
+    return Palette.purple300;
+  }
+}

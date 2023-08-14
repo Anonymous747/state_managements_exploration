@@ -32,8 +32,9 @@ class PokedexCubit extends Cubit<PokedexState> {
 
   void _paginationHandling() {
     state.mapOrNull(loaded: (loadState) {
-      if (scrollController.position.maxScrollExtent ==
-          scrollController.position.pixels) {
+      if (loadState.suitableForSearch.isEmpty &&
+          scrollController.position.maxScrollExtent ==
+              scrollController.position.pixels) {
         offset += _limit;
 
         emit(loadState.copyWith(isLoading: true));

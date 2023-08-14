@@ -1,7 +1,8 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:ui_kit/domain/domain.dart';
 
-class DioClient {
+class DioClient extends Client {
   DioClient()
       : _dio = Dio(
           BaseOptions(
@@ -9,18 +10,11 @@ class DioClient {
             receiveTimeout: const Duration(milliseconds: 5000),
             responseType: ResponseType.json,
           ),
-        ) {
-    // (_dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
-    //     (HttpClient client) {
-    //   client.badCertificateCallback =
-    //       (X509Certificate cert, String host, int port) => true;
-    //
-    //   return client;
-    // };
-  }
+        );
 
   late final Dio _dio;
 
+  @override
   Future<Response> get(
     String url, {
     Map<String, dynamic>? queryParameters,
@@ -46,6 +40,7 @@ class DioClient {
     }
   }
 
+  @override
   Future<Response> post(
     String url, {
     data,

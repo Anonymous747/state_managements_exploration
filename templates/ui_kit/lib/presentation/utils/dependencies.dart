@@ -1,7 +1,9 @@
 import 'package:get_it/get_it.dart';
+import 'package:hive/hive.dart';
+import 'package:ui_kit/data/data.dart';
 import 'package:ui_kit/domain/domain.dart';
 
-final _getIt = GetIt.instance;
+final getIt = GetIt.instance;
 
 T instanceOf<T extends Object>({
   String? instanceName,
@@ -15,16 +17,21 @@ T instanceOf<T extends Object>({
     );
 
 initUIKitDependencies() {
+  _initHive();
   _initRepositories();
   _initServices();
 }
 
+_initHive() {
+  Hive.init(null);
+}
+
 _initRepositories() {
-  _getIt.registerFactory<DioClient>(() => DioClient());
-  _getIt.registerFactory<PokemonRepository>(
-      () => PokemonRepository(_getIt.get()));
+  getIt.registerFactory<Client>(() => DioClient());
+  getIt.registerFactory<PokemonRepository>(
+      () => MainPokemonRepository(getIt.get()));
 }
 
 _initServices() {
-  _getIt.registerFactory<PokemonService>(() => PokemonService(_getIt.get()));
+  getIt.registerFactory<PokemonService>(() => MainPokemonService(getIt.get()));
 }

@@ -19,7 +19,10 @@ class PokemonCell extends StatelessWidget {
       margin: margin,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [pokemon?.color ?? Palette.purple700, Palette.light],
+          colors: [
+            pokemon?.color?.toColor() ?? Palette.purple700,
+            Palette.light
+          ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),

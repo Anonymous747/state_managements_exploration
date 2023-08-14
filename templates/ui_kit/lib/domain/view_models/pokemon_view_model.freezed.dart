@@ -21,7 +21,7 @@ mixin _$PokemonViewModel {
   int? get id => throw _privateConstructorUsedError;
   List<Ability?> get abilities => throw _privateConstructorUsedError;
   List<Stats>? get stats => throw _privateConstructorUsedError;
-  Color get color => throw _privateConstructorUsedError;
+  String? get color => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PokemonViewModelCopyWith<PokemonViewModel> get copyWith =>
@@ -40,7 +40,7 @@ abstract class $PokemonViewModelCopyWith<$Res> {
       int? id,
       List<Ability?> abilities,
       List<Stats>? stats,
-      Color color});
+      String? color});
 }
 
 /// @nodoc
@@ -61,7 +61,7 @@ class _$PokemonViewModelCopyWithImpl<$Res, $Val extends PokemonViewModel>
     Object? id = freezed,
     Object? abilities = null,
     Object? stats = freezed,
-    Object? color = null,
+    Object? color = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -84,10 +84,10 @@ class _$PokemonViewModelCopyWithImpl<$Res, $Val extends PokemonViewModel>
           ? _value.stats
           : stats // ignore: cast_nullable_to_non_nullable
               as List<Stats>?,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as String?,
     ) as $Val);
   }
 }
@@ -106,7 +106,7 @@ abstract class _$$_PokemonViewModelCopyWith<$Res>
       int? id,
       List<Ability?> abilities,
       List<Stats>? stats,
-      Color color});
+      String? color});
 }
 
 /// @nodoc
@@ -125,7 +125,7 @@ class __$$_PokemonViewModelCopyWithImpl<$Res>
     Object? id = freezed,
     Object? abilities = null,
     Object? stats = freezed,
-    Object? color = null,
+    Object? color = freezed,
   }) {
     return _then(_$_PokemonViewModel(
       name: null == name
@@ -148,10 +148,10 @@ class __$$_PokemonViewModelCopyWithImpl<$Res>
           ? _value._stats
           : stats // ignore: cast_nullable_to_non_nullable
               as List<Stats>?,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as String?,
     ));
   }
 }
@@ -165,7 +165,7 @@ class _$_PokemonViewModel implements _PokemonViewModel {
       this.id = 0,
       final List<Ability?> abilities = const [],
       final List<Stats>? stats = const [],
-      this.color = Palette.blue900})
+      this.color})
       : _abilities = abilities,
         _stats = stats;
 
@@ -197,8 +197,7 @@ class _$_PokemonViewModel implements _PokemonViewModel {
   }
 
   @override
-  @JsonKey()
-  final Color color;
+  final String? color;
 
   @override
   String toString() {
@@ -244,7 +243,7 @@ abstract class _PokemonViewModel implements PokemonViewModel {
       final int? id,
       final List<Ability?> abilities,
       final List<Stats>? stats,
-      final Color color}) = _$_PokemonViewModel;
+      final String? color}) = _$_PokemonViewModel;
 
   @override
   String get name;
@@ -257,7 +256,7 @@ abstract class _PokemonViewModel implements PokemonViewModel {
   @override
   List<Stats>? get stats;
   @override
-  Color get color;
+  String? get color;
   @override
   @JsonKey(ignore: true)
   _$$_PokemonViewModelCopyWith<_$_PokemonViewModel> get copyWith =>
