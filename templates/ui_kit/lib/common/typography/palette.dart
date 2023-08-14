@@ -26,6 +26,6 @@ class Palette {
 
 extension ColorConverterExtension on String {
   Color toColor() {
-    return Palette.purple300;
+    return Palette.purple700;
   }
 }
