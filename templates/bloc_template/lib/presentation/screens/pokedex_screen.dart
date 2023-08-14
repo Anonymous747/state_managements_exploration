@@ -17,42 +17,46 @@ class PokedexScreen extends StatelessWidget {
       backgroundColor: Palette.blue300,
       body: BlocProvider<PokedexCubit>(
         create: (context) => pokedexCubit,
-        child: BlocBuilder<PokedexCubit, PokedexState>(
-          builder: (context, state) {
-            return state.map(
-              loading: (_) => const Center(child: CircularProgressIndicator()),
-              error: (errorState) => Center(
-                child: Text(errorState.message),
-              ),
-              loaded: (loadedState) {
-                final isSearching = loadedState.suitableForSearch.isNotEmpty;
-                final pokemons = isSearching
-                    ? loadedState.suitableForSearch
-                    : loadedState.viewModels;
+        child: BlocProvider<PokemonCellCubit>(
+          create: (_) => instanceOf<PokemonCellCubit>(),
+          child: BlocBuilder<PokedexCubit, PokedexState>(
+            builder: (context, state) {
+              return state.map(
+                loading: (_) =>
+                    const Center(child: CircularProgressIndicator()),
+                error: (errorState) => Center(
+                  child: Text(errorState.message),
+                ),
+                loaded: (loadedState) {
+                  final isSearching = loadedState.suitableForSearch.isNotEmpty;
+                  final pokemons = isSearching
+                      ? loadedState.suitableForSearch
+                      : loadedState.viewModels;
 
-                return PokedexContainer(
-                  pokemons: pokemons,
-                  scrollController: pokedexCubit.scrollController,
-                  searchController: pokedexCubit.searchController,
-                  namedCellBuilder: ({required String name}) {
-                    return PokedexBody(
-                      navigateToStats: navigateToStats,
-                      name: name,
-                    );
-                  },
-                  loadMoreBuilder: loadedState.isLoading
-                      ? (context) {
-                          return Container(
-                            alignment: Alignment.center,
-                            height: 40,
-                            child: const CircularProgressIndicator(),
-                          );
-                        }
-                      : null,
-                );
-              },
-            );
-          },
+                  return PokedexContainer(
+                    pokemons: pokemons,
+                    scrollController: pokedexCubit.scrollController,
+                    searchController: pokedexCubit.searchController,
+                    namedCellBuilder: ({required String name}) {
+                      return PokedexBody(
+                        navigateToStats: navigateToStats,
+                        name: name,
+                      );
+                    },
+                    loadMoreBuilder: loadedState.isLoading
+                        ? (context) {
+                            return Container(
+                              alignment: Alignment.center,
+                              height: 40,
+                              child: const CircularProgressIndicator(),
+                            );
+                          }
+                        : null,
+                  );
+                },
+              );
+            },
+          ),
         ),
       ),
     );

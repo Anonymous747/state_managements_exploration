@@ -25,7 +25,7 @@ class PokedexCubit extends Cubit<PokedexState> {
     _receivePokemons();
 
     scrollController.addListener(_paginationHandling);
-    searchController.addListener(_searchHandlng);
+    searchController.addListener(_searchHandling);
   }
 
   int offset = 20;
@@ -43,7 +43,7 @@ class PokedexCubit extends Cubit<PokedexState> {
     });
   }
 
-  void _searchHandlng() {
+  void _searchHandling() {
     if (_timer != null) {
       _timer!.cancel();
     }
@@ -103,7 +103,7 @@ class PokedexCubit extends Cubit<PokedexState> {
   @override
   Future<void> close() {
     scrollController.removeListener(_paginationHandling);
-    searchController.removeListener(_searchHandlng);
+    searchController.removeListener(_searchHandling);
 
     scrollController.dispose();
     searchController.dispose();

@@ -10,30 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Hive implementation">
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/data/repositories/hive_store_repository.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/repositories/store_repository.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/hive_box.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/utils/dependencies.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/utils/dependencies.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/common/utils/dependencies.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/common/utils/dependencies.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokemon_cell/pokemon_cell_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokemon_cell/pokemon_cell_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokemon_cell/pokemon_cell_mapper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokemon_cell/pokemon_cell_mapper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/data/repositories/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/data/repositories/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/ability_tdo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/ability_tdo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/ability_tdo.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/ability_tdo.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/pokemon_data_tdo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/pokemon_data_tdo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/pokemon_data_tdo.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/pokemon_data_tdo.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/stats_tdo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/stats_tdo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/stats_tdo.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/data/tdo/stats_tdo.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_data/ability.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_data/ability.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/components/widgets/pokedex_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/components/widgets/pokedex_body.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/pokedex_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/pokedex_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_data/stats.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/models/pokemon_data/stats.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/domain/repositories/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/repositories/index.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/domain/view_models/pokemon_view_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/view_models/pokemon_view_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/domain/view_models/pokemon_view_model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/view_models/pokemon_view_model.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/label/ability_labels.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/label/ability_labels.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/dependencies.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/dependencies.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/hive_box.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/hive_box.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692002550934</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Hive implementation">
+      <created>1692019701633</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1692019701633</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">

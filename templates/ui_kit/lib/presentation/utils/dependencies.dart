@@ -29,13 +29,9 @@ Future<void> initUIKitDependencies() async {
 Future<void> _initHive() async {
   Directory directory = await pathProvider.getApplicationDocumentsDirectory();
 
-  Hive
-    ..init(directory.path)
-    ..registerAdapter(PokemonDataTdoAdapter())
-    ..registerAdapter(AbilityTdoAdapter())
-    ..registerAdapter(StatsTdoAdapter());
+  Hive.init(directory.path);
 
-  // await HiveBox.registerAdapters();
+  await HiveBox.registerAdapters();
   await HiveBox.openAll();
 }
 

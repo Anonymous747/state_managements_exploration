@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ui_kit/domain/domain.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 part 'stats.g.dart';
