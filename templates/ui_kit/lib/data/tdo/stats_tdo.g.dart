@@ -18,17 +18,20 @@ class StatsTdoAdapter extends TypeAdapter<StatsTdo> {
     };
     return StatsTdo(
       effort: fields[0] as int?,
-      stat: fields[1] as Ability?,
+      stat: fields[2] as AbilityTdo?,
+      baseStat: fields[1] as int?,
     );
   }
 
   @override
   void write(BinaryWriter writer, StatsTdo obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.effort)
       ..writeByte(1)
+      ..write(obj.baseStat)
+      ..writeByte(2)
       ..write(obj.stat);
   }
 

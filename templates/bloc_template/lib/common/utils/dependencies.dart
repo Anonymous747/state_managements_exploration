@@ -3,5 +3,5 @@ import 'package:ui_kit/ui_kit.dart';
 
 initBlocDependencies() {
   getIt.registerFactory(() => PokedexCubit(getIt.get()));
-  getIt.registerFactory(() => PokemonCellCubit(getIt.get()));
+  getIt.registerFactory(() => PokemonCellCubit(getIt.get(), getIt.get()));
 }

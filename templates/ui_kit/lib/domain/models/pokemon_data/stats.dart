@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:ui_kit/domain/domain.dart';
-import 'package:ui_kit/domain/models/pokemon_data/index.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 part 'stats.g.dart';
 part 'stats.freezed.dart';
@@ -14,4 +14,16 @@ class Stats with _$Stats {
   }) = _Stats;
 
   factory Stats.fromJson(Map<String, dynamic> json) => _$StatsFromJson(json);
+}
+
+extension TdoStats on List<Stats>? {
+  List<StatsTdo>? toTdo() => this
+      ?.map(
+        (stat) => StatsTdo(
+          effort: stat.effort,
+          stat: stat.stat.toTdo(),
+          baseStat: stat.baseStat,
+        ),
+      )
+      .toList();
 }

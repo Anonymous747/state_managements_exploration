@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 class AbilityLabels extends StatelessWidget {
-  final List<Ability?> abilities;
+  final List<Ability> abilities;
 
   const AbilityLabels({
     required this.abilities,
@@ -16,7 +16,7 @@ class AbilityLabels extends StatelessWidget {
           .map<Widget>((ability) => Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: AbilityCell(ability: ability?.name ?? ''),
+                  child: AbilityCell(ability: ability.name ?? ''),
                 ),
               ))
           .toList(),

@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:ui_kit/data/data.dart';
 import 'package:ui_kit/domain/domain.dart';
+import 'package:ui_kit/presentation/presentation.dart';
+import 'package:path_provider/path_provider.dart' as pathProvider;
 
 final getIt = GetIt.instance;
 
@@ -16,20 +20,31 @@ T instanceOf<T extends Object>({
       param2: param2,
     );
 
-initUIKitDependencies() {
+Future<void> initUIKitDependencies() async {
   _initHive();
   _initRepositories();
   _initServices();
 }
 
-_initHive() {
-  Hive.init(null);
+Future<void> _initHive() async {
+  Directory directory = await pathProvider.getApplicationDocumentsDirectory();
+
+  Hive
+    ..init(directory.path)
+    ..registerAdapter(PokemonDataTdoAdapter())
+    ..registerAdapter(AbilityTdoAdapter())
+    ..registerAdapter(StatsTdoAdapter());
+
+  // await HiveBox.registerAdapters();
+  await HiveBox.openAll();
 }
 
 _initRepositories() {
   getIt.registerFactory<Client>(() => DioClient());
   getIt.registerFactory<PokemonRepository>(
       () => MainPokemonRepository(getIt.get()));
+  getIt.registerFactory<StoreRepository>(() =>
+      HiveStoreRepository<PokemonDataTdo>(box: Hive.box(HiveBox.pokemonBox)));
 }
 
 _initServices() {

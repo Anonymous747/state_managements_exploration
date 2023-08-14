@@ -19,11 +19,10 @@ class PokemonDataTdoAdapter extends TypeAdapter<PokemonDataTdo> {
     return PokemonDataTdo(
       name: fields[0] as String,
       imageUrl: fields[1] as String,
-      abilities:
-          fields[3] == null ? [] : (fields[3] as List).cast<AbilityTdo?>(),
+      abilities: (fields[3] as List?)?.cast<AbilityTdo>(),
+      stats: (fields[4] as List?)?.cast<StatsTdo>(),
+      color: fields[5] as String?,
       id: fields[2] as int?,
-      stats: fields[4] == null ? [] : (fields[4] as List?)?.cast<StatsTdo>(),
-      color: (fields[5] as List?)?.cast<StatsTdo>(),
     );
   }
 

@@ -6,9 +6,12 @@ class PokemonCellMapper {
       name: model.name ?? '',
       imageUrl: model.sprites?.frontDefault ?? model.sprites?.frontShiny ?? '',
       id: model.id,
-      abilities:
-          model.abilities?.map((ability) => ability.ability).toList() ?? [],
-      stats: model.stats,
+      abilities: model.abilities
+              ?.where((ability) => ability?.ability != null)
+              .map((ability) => ability.ability!)
+              .toList() ??
+          [],
+      stats: model.stats ?? [],
       color: 'Grey',
     );
   }

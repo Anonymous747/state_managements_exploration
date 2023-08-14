@@ -19,8 +19,8 @@ mixin _$PokemonViewModel {
   String get name => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
-  List<Ability?> get abilities => throw _privateConstructorUsedError;
-  List<Stats>? get stats => throw _privateConstructorUsedError;
+  List<Ability> get abilities => throw _privateConstructorUsedError;
+  List<Stats> get stats => throw _privateConstructorUsedError;
   String? get color => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -38,8 +38,8 @@ abstract class $PokemonViewModelCopyWith<$Res> {
       {String name,
       String imageUrl,
       int? id,
-      List<Ability?> abilities,
-      List<Stats>? stats,
+      List<Ability> abilities,
+      List<Stats> stats,
       String? color});
 }
 
@@ -60,7 +60,7 @@ class _$PokemonViewModelCopyWithImpl<$Res, $Val extends PokemonViewModel>
     Object? imageUrl = null,
     Object? id = freezed,
     Object? abilities = null,
-    Object? stats = freezed,
+    Object? stats = null,
     Object? color = freezed,
   }) {
     return _then(_value.copyWith(
@@ -79,11 +79,11 @@ class _$PokemonViewModelCopyWithImpl<$Res, $Val extends PokemonViewModel>
       abilities: null == abilities
           ? _value.abilities
           : abilities // ignore: cast_nullable_to_non_nullable
-              as List<Ability?>,
-      stats: freezed == stats
+              as List<Ability>,
+      stats: null == stats
           ? _value.stats
           : stats // ignore: cast_nullable_to_non_nullable
-              as List<Stats>?,
+              as List<Stats>,
       color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -104,8 +104,8 @@ abstract class _$$_PokemonViewModelCopyWith<$Res>
       {String name,
       String imageUrl,
       int? id,
-      List<Ability?> abilities,
-      List<Stats>? stats,
+      List<Ability> abilities,
+      List<Stats> stats,
       String? color});
 }
 
@@ -124,7 +124,7 @@ class __$$_PokemonViewModelCopyWithImpl<$Res>
     Object? imageUrl = null,
     Object? id = freezed,
     Object? abilities = null,
-    Object? stats = freezed,
+    Object? stats = null,
     Object? color = freezed,
   }) {
     return _then(_$_PokemonViewModel(
@@ -143,11 +143,11 @@ class __$$_PokemonViewModelCopyWithImpl<$Res>
       abilities: null == abilities
           ? _value._abilities
           : abilities // ignore: cast_nullable_to_non_nullable
-              as List<Ability?>,
-      stats: freezed == stats
+              as List<Ability>,
+      stats: null == stats
           ? _value._stats
           : stats // ignore: cast_nullable_to_non_nullable
-              as List<Stats>?,
+              as List<Stats>,
       color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -163,8 +163,8 @@ class _$_PokemonViewModel implements _PokemonViewModel {
       {required this.name,
       required this.imageUrl,
       this.id = 0,
-      final List<Ability?> abilities = const [],
-      final List<Stats>? stats = const [],
+      final List<Ability> abilities = const [],
+      final List<Stats> stats = const [],
       this.color})
       : _abilities = abilities,
         _stats = stats;
@@ -176,24 +176,22 @@ class _$_PokemonViewModel implements _PokemonViewModel {
   @override
   @JsonKey()
   final int? id;
-  final List<Ability?> _abilities;
+  final List<Ability> _abilities;
   @override
   @JsonKey()
-  List<Ability?> get abilities {
+  List<Ability> get abilities {
     if (_abilities is EqualUnmodifiableListView) return _abilities;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_abilities);
   }
 
-  final List<Stats>? _stats;
+  final List<Stats> _stats;
   @override
   @JsonKey()
-  List<Stats>? get stats {
-    final value = _stats;
-    if (value == null) return null;
+  List<Stats> get stats {
     if (_stats is EqualUnmodifiableListView) return _stats;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_stats);
   }
 
   @override
@@ -241,8 +239,8 @@ abstract class _PokemonViewModel implements PokemonViewModel {
       {required final String name,
       required final String imageUrl,
       final int? id,
-      final List<Ability?> abilities,
-      final List<Stats>? stats,
+      final List<Ability> abilities,
+      final List<Stats> stats,
       final String? color}) = _$_PokemonViewModel;
 
   @override
@@ -252,9 +250,9 @@ abstract class _PokemonViewModel implements PokemonViewModel {
   @override
   int? get id;
   @override
-  List<Ability?> get abilities;
+  List<Ability> get abilities;
   @override
-  List<Stats>? get stats;
+  List<Stats> get stats;
   @override
   String? get color;
   @override
