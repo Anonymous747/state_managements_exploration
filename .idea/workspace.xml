@@ -9,10 +9,47 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Finalized bloc implementation">
-      <change afterPath="$PROJECT_DIR$/scripts/create_template.sh" afterDir="false" />
+    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Template generation script and redux initial template">
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/common/common.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/presentation.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/actions/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/actions/pokedex_actions.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/pokedex_middleware.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/app_state_reducer.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/pokedex_reducer.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/app_state.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/pokedex_state.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/screen/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/screen/pokedex_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/widget/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/widget/wrapper/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/widget/wrapper/redux_initializer_wrapper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/typography/palette.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/typography/palette.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/utils/navigation/app_routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/utils/navigation/app_routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/screens/select_management_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/screens/select_management_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state_managements_exploration.iml" beforeDir="false" afterPath="$PROJECT_DIR$/state_managements_exploration.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/pokedex_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/pokedex_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/redux_template.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/redux_template.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/linux/flutter/generated_plugin_registrant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/linux/flutter/generated_plugins.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/test/redux_template_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/windows/flutter/generated_plugin_registrant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/windows/flutter/generated_plugins.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/android/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +89,7 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../english_words" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bible_trivia" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -217,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692025210544</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Template generation script and redux initial template">
+      <created>1692031251515</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1692031251515</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -259,6 +303,7 @@
     <MESSAGE value="Clean architecture and hive models" />
     <MESSAGE value="Hive implementation" />
     <MESSAGE value="Finalized bloc implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalized bloc implementation" />
+    <MESSAGE value="Template generation script and redux initial template" />
+    <option name="LAST_COMMIT_MESSAGE" value="Template generation script and redux initial template" />
   </component>
 </project>

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:state_managements_exploration/common/common.dart';
 import 'package:ui_kit/ui_kit.dart';
 import 'package:bloc_template/bloc_template.dart' as bloc;
+import 'package:redux_template/redux_template.dart' as redux;
 
 class SelectManagementScreen extends StatelessWidget {
   static const routeName = "/select_management";
@@ -52,7 +53,9 @@ class SelectManagementScreen extends StatelessWidget {
                 maxWidth: 200,
                 style:
                     TextStyles.regularNormalStyle(fontWeight: FontWeight.w500),
-                onTap: () {},
+                onTap: () {
+                  pushNamed(redux.PokedexScreen.route_name);
+                },
               ),
               const SizedBox(height: 20),
               FlatButton.text(
