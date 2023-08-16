@@ -17,3 +17,9 @@ class LoadPokemonStatsAction {
 
   const LoadPokemonStatsAction({required this.name});
 }
+
+class SearchPokemonsAction {
+  final List<PokemonBaseViewModel> suitableForSearch;
+
+  const SearchPokemonsAction(this.suitableForSearch);
+}

@@ -1,4 +1,3 @@
-class Constants {
-  static const pokemonLogo =
-      "https://clipground.com/images/pokemon-logo-png-5.png";
+abstract class Constants {
+  static const int listLimitation = 20;
 }

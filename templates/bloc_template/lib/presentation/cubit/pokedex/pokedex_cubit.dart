@@ -1,61 +1,50 @@
 import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 part 'pokedex_state.dart';
 part 'pokedex_cubit.freezed.dart';
 
-const _emptyListError = 'The pokemons list is empty';
-const _limit = 20;
-
 class PokedexCubit extends Cubit<PokedexState> {
   final PokemonService _pokemonService;
 
   final PokedexMapper _mapper = PokedexMapper();
-  final scrollController = ScrollController();
-  final searchController = TextEditingController();
 
   Timer? _timer;
 
   PokedexCubit(this._pokemonService) : super(const PokedexState.loading()) {
     _receivePokemons();
-
-    scrollController.addListener(_paginationHandling);
-    searchController.addListener(_searchHandling);
   }
 
   int offset = 20;
 
-  void _paginationHandling() {
+  void paginationHandling(double maxScrollExtent, double pixels) {
     state.mapOrNull(loaded: (loadState) {
-      if (loadState.suitableForSearch.isEmpty &&
-          scrollController.position.maxScrollExtent ==
-              scrollController.position.pixels) {
-        offset += _limit;
+      if (loadState.suitableForSearch.isEmpty && maxScrollExtent == pixels) {
+        offset += Constants.listLimitation;
 
         emit(loadState.copyWith(isLoading: true));
-        _receivePokemons(limit: _limit, offset: offset);
+        _receivePokemons(limit: Constants.listLimitation, offset: offset);
       }
     });
   }
 
-  void _searchHandling() {
+  void searchHandling(String text) {
     if (_timer != null) {
       _timer!.cancel();
     }
 
     _timer = Timer(
       const Duration(seconds: 2),
-      _searchPokemonByName,
+      () => _searchPokemonByName(text),
     );
   }
 
-  void _searchPokemonByName() {
+  void _searchPokemonByName(String text) {
     state.mapOrNull(loaded: (loadedState) {
-      final searchFragment = searchController.text;
+      final searchFragment = text;
 
       final filteredList = loadedState.viewModels
           .where((pokemon) => pokemon.name.contains(searchFragment))
@@ -63,11 +52,10 @@ class PokedexCubit extends Cubit<PokedexState> {
 
       emit(loadedState.copyWith(suitableForSearch: filteredList));
     });
-
-    // TODO: Implement pokemon searching and possibility to
   }
 
-  Future<void> _receivePokemons({int limit = _limit, int offset = 0}) async {
+  Future<void> _receivePokemons(
+      {int limit = Constants.listLimitation, int offset = 0}) async {
     _pokemonService.getPokemons(
       limit: limit,
       offset: offset,
@@ -75,7 +63,7 @@ class PokedexCubit extends Cubit<PokedexState> {
         final pokemons = response.results;
 
         if (pokemons == null || pokemons.isEmpty) {
-          emit(const PokedexState.error(message: _emptyListError));
+          emit(const PokedexState.error(message: Strings.emptyListError));
           return;
         }
 
@@ -97,16 +85,5 @@ class PokedexCubit extends Cubit<PokedexState> {
         emit(PokedexState.error(message: message));
       },
     );
-  }
-
-  @override
-  Future<void> close() {
-    scrollController.removeListener(_paginationHandling);
-    searchController.removeListener(_searchHandling);
-
-    scrollController.dispose();
-    searchController.dispose();
-
-    return super.close();
   }
 }

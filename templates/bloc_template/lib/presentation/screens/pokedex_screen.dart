@@ -10,13 +10,13 @@ class PokedexScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pokedexCubit = instanceOf<PokedexCubit>();
+    final cubit = instanceOf<PokedexCubit>();
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Palette.blue300,
       body: BlocProvider<PokedexCubit>(
-        create: (context) => pokedexCubit,
+        create: (context) => cubit,
         child: BlocProvider<PokemonCellCubit>(
           create: (_) => instanceOf<PokemonCellCubit>(),
           child: BlocBuilder<PokedexCubit, PokedexState>(
@@ -35,23 +35,23 @@ class PokedexScreen extends StatelessWidget {
 
                   return PokedexContainer(
                     pokemons: pokemons,
-                    scrollController: pokedexCubit.scrollController,
-                    searchController: pokedexCubit.searchController,
+                    scrollListener: cubit.paginationHandling,
+                    searchListener: cubit.searchHandling,
                     namedCellBuilder: ({required String name}) {
                       return PokedexBody(
                         navigateToStats: navigateToStats,
                         name: name,
                       );
                     },
-                    loadMoreBuilder: loadedState.isLoading
-                        ? (context) {
-                            return Container(
+                    loadMoreBuilder: (context) {
+                      return loadedState.isLoading
+                          ? Container(
                               alignment: Alignment.center,
                               height: 40,
                               child: const CircularProgressIndicator(),
-                            );
-                          }
-                        : null,
+                            )
+                          : Container(height: 40);
+                    },
                   );
                 },
               );

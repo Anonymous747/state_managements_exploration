@@ -1,16 +1,14 @@
 import 'package:redux/redux.dart';
 import 'package:redux_template/presentation/presentation.dart';
-
-const _defaultFailureMessage = 'Something went wrong. Try again later please.';
+import 'package:ui_kit/ui_kit.dart';
 
 Reducer<PokedexState> pokedexReducers = combineReducers([
   TypedReducer<PokedexState, LoadPokemonsAction>(_pokemonsLoad),
   TypedReducer<PokedexState, PokemonsLoadFailureAction>(_pokemonsLoadFailure),
+  TypedReducer<PokedexState, SearchPokemonsAction>(_pokemonsSearch),
 ]);
 
 PokedexState _pokemonsLoad(PokedexState prevState, LoadPokemonsAction action) {
-  print('========= pokedex_reducer _loadPokemons');
-
   return prevState.copyWith(
     viewModels: action.viewModels,
     isLoading: false,
@@ -22,5 +20,13 @@ PokedexState _pokemonsLoadFailure(
     PokedexState prevState, PokemonsLoadFailureAction action) {
   print('========= _pokemonsLoadFailure');
   return prevState.copyWith(
-      isLoading: false, errorMessage: action.message ?? _defaultFailureMessage);
+      isLoading: false,
+      errorMessage: action.message ?? Strings.defaultFailureMessage);
+}
+
+PokedexState _pokemonsSearch(
+    PokedexState prevState, SearchPokemonsAction action) {
+  return prevState.copyWith(
+    suitableForSearch: action.suitableForSearch,
+  );
 }
