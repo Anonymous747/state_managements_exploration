@@ -13,29 +13,69 @@ class PokedexScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Palette.blue300,
-      body: ReduxInitializerWrapper(
-        child: StoreConnector<AppState, _ViewModel>(
-            converter: _ViewModel.fromStore,
-            builder: (context, _ViewModel viewModel) {
-              // if (viewModel.l)
+      body: StoreConnector<AppState, _ViewModel>(
+          ignoreChange: (store) {
+            return store.pokedexState.isLoading;
+          },
+          onInitialBuild: (store) {
+            store.loadPokemons();
+          },
+          converter: _ViewModel.fromStore,
+          builder: (context, _ViewModel viewModel) {
+            print('========= viewModel');
 
-              return PokedexContainer(
-                searchController: TextEditingController(),
-                namedCellBuilder: ({required String name}) => Container(),
-                pokemons: [],
-                scrollController: ScrollController(),
-              );
-            }),
-      ),
+            if (viewModel.isLoading) {
+              return const Center(child: CircularProgressIndicator());
+            }
+
+            print(
+                '========= viewModel.baseModels = ${viewModel.baseModels.length}');
+
+            return PokedexContainer(
+              searchController: TextEditingController(),
+              scrollController: ScrollController(),
+              pokemons: viewModel.baseModels,
+              namedCellBuilder: ({required String name}) {
+                return PokedexBody(name: name);
+              },
+            );
+          }),
     );
   }
 }
 
 class _ViewModel {
-  const _ViewModel();
+  final List<PokemonBaseViewModel> baseModels;
+  final List<PokemonBaseViewModel> suitableForSearch;
+  final bool isLoading;
+  final bool isLoadMore;
+  final String? errorMessage;
+
+  final VoidCallback loadPokemons;
+  final StringBuilder navigateToStats;
+
+  const _ViewModel({
+    required this.suitableForSearch,
+    required this.baseModels,
+    required this.isLoading,
+    required this.isLoadMore,
+    required this.errorMessage,
+    required this.loadPokemons,
+    required this.navigateToStats,
+  });
 
   static _ViewModel fromStore(Store<AppState> store) {
-    // store.state.pokedexState.
-    return _ViewModel();
+    return _ViewModel(
+        suitableForSearch: store.state.pokedexState.suitableForSearch,
+        baseModels: store.state.pokedexState.viewModels,
+        isLoading: store.state.pokedexState.isLoading,
+        isLoadMore: store.state.pokedexState.isLoadMore,
+        errorMessage: store.state.pokedexState.errorMessage,
+        loadPokemons: () {
+          store.dispatch(loadPokemonsThunk());
+        },
+        navigateToStats: (String name) {
+          store.dispatch(LoadPokemonStatsAction(name: name));
+        });
   }
 }

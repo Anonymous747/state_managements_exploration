@@ -46,7 +46,6 @@ class _PokedexBodyState extends State<PokedexBody> {
                 cellLoadedState.viewModel,
               ),
               child: PokemonCell(
-                key: ValueKey(widget.name),
                 pokemon: cellLoadedState.viewModel,
                 margin: const EdgeInsets.all(12),
               ),

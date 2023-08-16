@@ -9,47 +9,43 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Template generation script and redux initial template">
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/common/common.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/presentation.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/actions/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/actions/pokedex_actions.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/pokedex_middleware.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/app_state_reducer.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/pokedex_reducer.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/app_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/pokedex_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/screen/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/screen/pokedex_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/widget/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/widget/wrapper/index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/widget/wrapper/redux_initializer_wrapper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+    <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Base redux configuration">
+      <change afterPath="$PROJECT_DIR$/scripts/gen_redux.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/components/widgets/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/components/widgets/pokedex_body.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/actions/pokemon_cell_actions.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/pokemon_cell_middleware.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/pokemon_cell_reducer.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/pokemon_cell_state.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/strings.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/mappers/index.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/mappers/pokedex_cell_mapper.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/mappers/pokedex_mapper.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/utils/navigation/app_routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/utils/navigation/app_routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/screens/select_management_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/screens/select_management_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state_managements_exploration.iml" beforeDir="false" afterPath="$PROJECT_DIR$/state_managements_exploration.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/pokedex_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/pokedex_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/redux_template.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/redux_template.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/linux/flutter/generated_plugin_registrant.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/linux/flutter/generated_plugins.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/test/redux_template_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/windows/flutter/generated_plugin_registrant.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/windows/flutter/generated_plugins.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/screens/app_gate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/screens/app_gate.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/components/widgets/pokedex_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/components/widgets/pokedex_body.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_mapper.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokemon_cell/pokemon_cell_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokemon_cell/pokemon_cell_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokemon_cell/pokemon_cell_mapper.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/presentation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/presentation.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/actions/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/actions/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/actions/pokedex_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/actions/pokedex_actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/pokedex_middleware.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/pokedex_middleware.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/app_state_reducer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/app_state_reducer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/pokedex_reducer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/pokedex_reducer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/app_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/app_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/pokedex_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/states/pokedex_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/screen/pokedex_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/screen/pokedex_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/widget/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/components/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/widget/wrapper/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/components/wrapper/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/widget/wrapper/redux_initializer_wrapper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/components/wrapper/redux_initializer_wrapper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/extensions/typedefs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/extensions/typedefs.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/domain/domain.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/domain/domain.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,11 +91,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\data\repositories\network" />
+      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\domain" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\data" />
+      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\domain\mappers" />
+      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\data\repositories\network" />
       <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\presentation" />
-      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\domain\models\pokemon_data" />
-      <recent name="C:\Users\m.kobrinec\Lightshot\Flutter_\projects\state_managements_exploration\templates\ui_kit\lib\common\constants" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -261,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692031251515</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Base redux configuration">
+      <created>1692102888662</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1692102888662</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -304,6 +307,7 @@
     <MESSAGE value="Hive implementation" />
     <MESSAGE value="Finalized bloc implementation" />
     <MESSAGE value="Template generation script and redux initial template" />
-    <option name="LAST_COMMIT_MESSAGE" value="Template generation script and redux initial template" />
+    <MESSAGE value="Base redux configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base redux configuration" />
   </component>
 </project>

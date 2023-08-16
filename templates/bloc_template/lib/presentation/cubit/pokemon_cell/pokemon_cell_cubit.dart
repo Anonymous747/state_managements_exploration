@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
 import 'package:ui_kit/ui_kit.dart';
 
-part 'pokemon_cell_mapper.dart';
 part 'pokemon_cell_state.dart';
 part 'pokemon_cell_cubit.freezed.dart';
 

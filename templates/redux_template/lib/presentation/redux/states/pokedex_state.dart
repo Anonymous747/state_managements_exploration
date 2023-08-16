@@ -1,13 +1,15 @@
-class PokedexState {
-  const PokedexState();
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:ui_kit/ui_kit.dart';
 
-  factory PokedexState.initial() {
-    return PokedexState();
-  }
+part 'pokedex_state.freezed.dart';
 
-  PokedexState copyWith({
-    int? a,
-  }) {
-    return PokedexState();
-  }
+@freezed
+class PokedexState with _$PokedexState {
+  factory PokedexState.load({
+    @Default([]) List<PokemonBaseViewModel> viewModels,
+    @Default([]) List<PokemonBaseViewModel> suitableForSearch,
+    @Default(true) bool isLoading,
+    @Default(false) bool isLoadMore,
+    String? errorMessage,
+  }) = _PokedexLoadedState;
 }
