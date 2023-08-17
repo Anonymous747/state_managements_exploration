@@ -25,9 +25,12 @@ class _PokedexBodyState extends State<PokedexBody> {
         },
         converter: _ViewModel.fromStore,
         builder: (context, _ViewModel viewModel) {
-          return PokemonCell(
-            pokemon: viewModel.viewModel[widget.name],
-            margin: const EdgeInsets.all(12),
+          return GestureDetector(
+            onTap: () => viewModel.navigateToStats(context, widget.name),
+            child: PokemonCell(
+              pokemon: viewModel.viewModel[widget.name],
+              margin: const EdgeInsets.all(12),
+            ),
           );
         });
   }
@@ -39,21 +42,33 @@ class _ViewModel {
   final bool isLoading;
 
   final StringBuilder loadPokemon;
+  final void Function(BuildContext context, String name) navigateToStats;
 
   const _ViewModel({
     required this.viewModel,
     required this.isLoading,
     required this.errorMessage,
     required this.loadPokemon,
+    required this.navigateToStats,
   });
 
   static _ViewModel fromStore(Store<AppState> store) {
     return _ViewModel(
-        viewModel: store.state.pokemonCellState.viewModels,
-        isLoading: store.state.pokemonCellState.isLoading,
-        errorMessage: store.state.pokemonCellState.errorMessage,
-        loadPokemon: (name) {
-          store.dispatch(loadPokemonCellThunk(name: name));
-        });
+      viewModel: store.state.pokemonCellState.viewModels,
+      isLoading: store.state.pokemonCellState.isLoading,
+      errorMessage: store.state.pokemonCellState.errorMessage,
+      loadPokemon: (String name) {
+        store.dispatch(loadPokemonCellThunk(name: name));
+      },
+      navigateToStats: (BuildContext context, String name) {
+        final viewModel = store.state.pokemonCellState.viewModels[name]!;
+
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => PokemonStatsContainer(viewModel: viewModel),
+            ));
+      },
+    );
   }
 }

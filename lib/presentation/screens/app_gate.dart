@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ui_kit/ui_kit.dart';
 import 'package:redux_template/redux_template.dart';
 import 'package:state_managements_exploration/common/common.dart';
-import 'package:state_managements_exploration/presentation/screens/index.dart';
+import 'package:state_managements_exploration/presentation/presentation.dart';
 
 class AppGate extends StatelessWidget {
   const AppGate({super.key});

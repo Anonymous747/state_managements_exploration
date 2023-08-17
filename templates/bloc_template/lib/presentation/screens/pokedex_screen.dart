@@ -43,15 +43,6 @@ class PokedexScreen extends StatelessWidget {
                         name: name,
                       );
                     },
-                    loadMoreBuilder: (context) {
-                      return loadedState.isLoading
-                          ? Container(
-                              alignment: Alignment.center,
-                              height: 40,
-                              child: const CircularProgressIndicator(),
-                            )
-                          : Container(height: 40);
-                    },
                   );
                 },
               );

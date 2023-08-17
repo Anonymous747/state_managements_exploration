@@ -38,9 +38,6 @@ class PokedexScreen extends StatelessWidget {
               namedCellBuilder: ({required String name}) {
                 return PokedexBody(name: name);
               },
-              loadMoreBuilder: (context) {
-                return Container(height: 40);
-              },
             );
           }),
     );
@@ -55,7 +52,6 @@ class _ViewModel {
   final String? errorMessage;
 
   final VoidCallback loadPokemons;
-  final StringBuilder navigateToStats;
   final StringBuilder onSearchListener;
   final Function(double, double) onScrollListener;
 
@@ -66,7 +62,6 @@ class _ViewModel {
     required this.isLoadMore,
     required this.errorMessage,
     required this.loadPokemons,
-    required this.navigateToStats,
     required this.onSearchListener,
     required this.onScrollListener,
   });
@@ -79,14 +74,16 @@ class _ViewModel {
       isLoadMore: store.state.pokedexState.isLoadMore,
       errorMessage: store.state.pokedexState.errorMessage,
       loadPokemons: () {
-        store.dispatch(loadPokemonsThunk());
+        store.dispatch(pokedexLoadThunk());
       },
       onSearchListener: (text) {
-        store.dispatch(searchHandlingThunk(text));
+        store.dispatch(pokedexSearchThunk(text));
       },
-      onScrollListener: (screllExtent, pixels) {},
-      navigateToStats: (String name) {
-        store.dispatch(LoadPokemonStatsAction(name: name));
+      onScrollListener: (maxScrollExtent, pixels) {
+        store.dispatch(pokedexLoadMoreThunk(
+          maxScrollExtent: maxScrollExtent,
+          pixels: pixels,
+        ));
       },
     );
   }

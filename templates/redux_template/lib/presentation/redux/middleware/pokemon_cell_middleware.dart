@@ -15,7 +15,6 @@ void loadPokemonCell(
   Store<AppState> store, {
   required String name,
 }) async {
-  print('========= loadPokemonCell');
   final dtoModel = await _storeRepository.get(name);
   if (dtoModel != null) {
     final viewModel = dtoModel.toViewModel() as PokemonViewModel;

@@ -4,14 +4,12 @@ import 'package:ui_kit/ui_kit.dart';
 class PokedexContainer extends StatefulWidget {
   final List<PokemonBaseViewModel> pokemons;
   final Widget Function({required String name}) namedCellBuilder;
-  final WidgetBuilder loadMoreBuilder;
   final void Function(double maxScrollExtent, double pixels) scrollListener;
   final StringBuilder searchListener;
 
   const PokedexContainer({
     required this.pokemons,
     required this.namedCellBuilder,
-    required this.loadMoreBuilder,
     required this.scrollListener,
     required this.searchListener,
     Key? key,
@@ -87,7 +85,6 @@ class _PokedexContainerState extends State<PokedexContainer> {
                 ),
               ),
             ),
-            widget.loadMoreBuilder(context)
           ],
         ),
       ],

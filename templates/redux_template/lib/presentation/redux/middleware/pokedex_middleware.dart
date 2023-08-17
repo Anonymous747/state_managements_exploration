@@ -8,16 +8,31 @@ import 'package:redux_template/presentation/presentation.dart';
 
 final _mapper = PokedexMapper();
 
+/// Need to make delay when search text changing to make sure
+/// the user stops typing and waits for the result
+///
 Timer? _timer;
 
-ThunkAction<AppState> loadPokemonsThunk({
+int _offset = 0;
+
+ThunkAction<AppState> pokedexLoadThunk({
   int limit = Constants.listLimitation,
   int offset = 0,
 }) =>
     (store) => loadPokemons(store, limit: limit, offset: offset);
 
-ThunkAction<AppState> searchHandlingThunk(String text) =>
+ThunkAction<AppState> pokedexSearchThunk(String text) =>
     (store) => searchHandling(store, text: text);
+
+ThunkAction<AppState> pokedexLoadMoreThunk({
+  required double maxScrollExtent,
+  required double pixels,
+}) =>
+    (store) => loadMorePokemons(
+          store,
+          maxScrollExtent: maxScrollExtent,
+          pixels: pixels,
+        );
 
 void loadPokemons(
   Store<AppState> store, {
@@ -33,16 +48,18 @@ void loadPokemons(
 
         if (pokemons == null || pokemons.isEmpty) {
           store.dispatch(
-              const PokemonsLoadFailureAction(message: Strings.emptyListError));
+              const PokedexLoadFailureAction(message: Strings.emptyListError));
           return;
         }
 
         final viewModels = _mapper.convertToViewModel(pokemons);
+        final prevViewModels = store.state.pokedexState.viewModels;
+        final actualList = [...prevViewModels, ...viewModels];
 
-        store.dispatch(LoadPokemonsAction(viewModels: viewModels));
+        store.dispatch(PokedexLoadAction(viewModels: actualList));
       },
       onError: (errorMessage) {
-        store.dispatch(PokemonsLoadFailureAction(message: errorMessage));
+        store.dispatch(PokedexLoadFailureAction(message: errorMessage));
       });
 }
 
@@ -66,5 +83,19 @@ void _searchPokemonByName(Store<AppState> store, String text) {
   final filteredList =
       pokemons.where((pokemon) => pokemon.name.contains(text)).toList();
 
-  store.dispatch(SearchPokemonsAction(filteredList));
+  store.dispatch(PokedexSearchAction(filteredList));
+}
+
+void loadMorePokemons(
+  Store<AppState> store, {
+  required double maxScrollExtent,
+  required double pixels,
+}) {
+  final suitableForSearch = store.state.pokedexState.suitableForSearch;
+
+  if (suitableForSearch.isEmpty && maxScrollExtent == pixels) {
+    _offset += Constants.listLimitation;
+
+    loadPokemons(store, limit: Constants.listLimitation, offset: _offset);
+  }
 }

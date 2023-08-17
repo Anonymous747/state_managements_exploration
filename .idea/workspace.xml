@@ -10,20 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2802bbc1-0538-4532-92b4-9e2f5484e7e4" name="Changes" comment="Redux search implementation">
-      <change afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/sources.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/cubit/pokedex/pokedex_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/utils/navigation/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/utils/navigation/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/utils/navigation/navigation.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/screens/app_gate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/screens/app_gate.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/pokedex_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bloc_template/lib/presentation/screens/pokedex_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/components/widgets/pokedex_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/components/widgets/pokedex_body.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/actions/pokedex_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/actions/pokedex_actions.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/pokedex_middleware.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/pokedex_middleware.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/pokemon_cell_middleware.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/middleware/pokemon_cell_middleware.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/pokedex_reducer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/pokedex_reducer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/pokemon_cell_reducer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/redux/reducers/pokemon_cell_reducer.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/redux_template/lib/presentation/screen/pokedex_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/redux_template/lib/presentation/screen/pokedex_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/constants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/strings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/common/constants/strings.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/containers/pokedex_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/containers/pokedex_container.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/general/pokemon_logo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/components/widgets/general/pokemon_logo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ui_kit/lib/presentation/utils/navigation.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692176846067</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Redux search implementation">
+      <created>1692203410107</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1692203410107</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">

@@ -1,25 +1,25 @@
 import 'package:ui_kit/ui_kit.dart';
 
-class LoadPokemonsAction {
+class PokedexLoadAction {
   final List<PokemonBaseViewModel> viewModels;
 
-  const LoadPokemonsAction({required this.viewModels});
+  const PokedexLoadAction({required this.viewModels});
 }
 
-class PokemonsLoadFailureAction {
+class PokedexLoadFailureAction {
   final String? message;
 
-  const PokemonsLoadFailureAction({required this.message});
+  const PokedexLoadFailureAction({required this.message});
 }
 
-class LoadPokemonStatsAction {
+class PokedexLoadStatsAction {
   final String name;
 
-  const LoadPokemonStatsAction({required this.name});
+  const PokedexLoadStatsAction({required this.name});
 }
 
-class SearchPokemonsAction {
+class PokedexSearchAction {
   final List<PokemonBaseViewModel> suitableForSearch;
 
-  const SearchPokemonsAction(this.suitableForSearch);
+  const PokedexSearchAction(this.suitableForSearch);
 }

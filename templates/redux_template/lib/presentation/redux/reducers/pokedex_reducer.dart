@@ -1,14 +1,14 @@
 import 'package:redux/redux.dart';
-import 'package:redux_template/presentation/presentation.dart';
 import 'package:ui_kit/ui_kit.dart';
+import 'package:redux_template/presentation/presentation.dart';
 
 Reducer<PokedexState> pokedexReducers = combineReducers([
-  TypedReducer<PokedexState, LoadPokemonsAction>(_pokemonsLoad),
-  TypedReducer<PokedexState, PokemonsLoadFailureAction>(_pokemonsLoadFailure),
-  TypedReducer<PokedexState, SearchPokemonsAction>(_pokemonsSearch),
+  TypedReducer<PokedexState, PokedexLoadAction>(_pokedexLoad),
+  TypedReducer<PokedexState, PokedexLoadFailureAction>(_pokedexLoadFailure),
+  TypedReducer<PokedexState, PokedexSearchAction>(_pokedexSearch),
 ]);
 
-PokedexState _pokemonsLoad(PokedexState prevState, LoadPokemonsAction action) {
+PokedexState _pokedexLoad(PokedexState prevState, PokedexLoadAction action) {
   return prevState.copyWith(
     viewModels: action.viewModels,
     isLoading: false,
@@ -16,16 +16,15 @@ PokedexState _pokemonsLoad(PokedexState prevState, LoadPokemonsAction action) {
   );
 }
 
-PokedexState _pokemonsLoadFailure(
-    PokedexState prevState, PokemonsLoadFailureAction action) {
-  print('========= _pokemonsLoadFailure');
+PokedexState _pokedexLoadFailure(
+    PokedexState prevState, PokedexLoadFailureAction action) {
   return prevState.copyWith(
       isLoading: false,
       errorMessage: action.message ?? Strings.defaultFailureMessage);
 }
 
-PokedexState _pokemonsSearch(
-    PokedexState prevState, SearchPokemonsAction action) {
+PokedexState _pokedexSearch(
+    PokedexState prevState, PokedexSearchAction action) {
   return prevState.copyWith(
     suitableForSearch: action.suitableForSearch,
   );
