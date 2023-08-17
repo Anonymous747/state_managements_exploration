@@ -22,6 +22,7 @@ PokemonCellState _pokemonCellLoad(
 PokemonCellState _pokemonCellLoadFailure(
     PokemonCellState prevState, PokemonCellLoadFailureAction action) {
   return prevState.copyWith(
-      isLoading: false,
-      errorMessage: action.message ?? Strings.defaultFailureMessage);
+    isLoading: false,
+    errorMessage: action.message ?? Strings.defaultFailure,
+  );
 }

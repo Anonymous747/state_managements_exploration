@@ -13,6 +13,8 @@ final _mapper = PokedexMapper();
 ///
 Timer? _timer;
 
+/// Indicates the current progress in loading Pokemons list
+///
 int _offset = 0;
 
 ThunkAction<AppState> pokedexLoadThunk({
@@ -47,8 +49,8 @@ void loadPokemons(
         final pokemons = response.results;
 
         if (pokemons == null || pokemons.isEmpty) {
-          store.dispatch(
-              const PokedexLoadFailureAction(message: Strings.emptyListError));
+          store.dispatch(const PokedexLoadFailureAction(
+              message: Strings.emptyListFailure));
           return;
         }
 

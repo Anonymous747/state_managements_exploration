@@ -63,7 +63,7 @@ class PokedexCubit extends Cubit<PokedexState> {
         final pokemons = response.results;
 
         if (pokemons == null || pokemons.isEmpty) {
-          emit(const PokedexState.error(message: Strings.emptyListError));
+          emit(const PokedexState.error(message: Strings.emptyListFailure));
           return;
         }
 
