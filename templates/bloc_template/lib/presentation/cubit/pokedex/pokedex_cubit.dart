@@ -18,15 +18,15 @@ class PokedexCubit extends Cubit<PokedexState> {
     _receivePokemons();
   }
 
-  int offset = 20;
+  int _offset = 20;
 
   void paginationHandling(double maxScrollExtent, double pixels) {
     state.mapOrNull(loaded: (loadState) {
       if (loadState.suitableForSearch.isEmpty && maxScrollExtent == pixels) {
-        offset += Constants.listLimitation;
+        _offset += Constants.listLimitation;
 
         emit(loadState.copyWith(isLoading: true));
-        _receivePokemons(limit: Constants.listLimitation, offset: offset);
+        _receivePokemons(limit: Constants.listLimitation, offset: _offset);
       }
     });
   }

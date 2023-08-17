@@ -21,6 +21,11 @@ class _PokedexBodyState extends State<PokedexBody> {
   late final PokemonCellCubit _cellCubit;
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   void didChangeDependencies() {
     super.didChangeDependencies();
 

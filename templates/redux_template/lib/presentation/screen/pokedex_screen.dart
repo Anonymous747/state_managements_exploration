@@ -1,8 +1,9 @@
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter/material.dart';
-import 'package:redux_template/presentation/presentation.dart';
+
 import 'package:ui_kit/ui_kit.dart';
+import 'package:redux_template/presentation/presentation.dart';
 
 class PokedexScreen extends StatelessWidget {
   static const route_name = 'redux_pokedex';
