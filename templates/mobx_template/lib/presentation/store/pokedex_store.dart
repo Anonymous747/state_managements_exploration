@@ -35,12 +35,12 @@ abstract class _PokedexStore with Store {
 
   @action
   void paginationHandling(double maxScrollExtent, double pixels) {
-    if (suitableForSearch.isEmpty) return;
+    if (suitableForSearch.isNotEmpty) return;
 
     if (maxScrollExtent == pixels) {
       _offset += Constants.listLimitation;
 
-      print('========= pagination');
+      print('========= pagination _offset = $_offset');
       _loadPokemons(limit: Constants.listLimitation, offset: _offset);
     }
   }
@@ -69,7 +69,6 @@ abstract class _PokedexStore with Store {
   }
 
   @action
-  @alwaysNotify
   void _loadPokemons({int limit = Constants.listLimitation, int offset = 0}) {
     _pokemonService.getPokemons(
       limit: limit,
@@ -84,6 +83,8 @@ abstract class _PokedexStore with Store {
 
         final viewModels = _mapper.convertToViewModel(pokemons);
         baseViewModels = [...baseViewModels, ...viewModels];
+
+        print('========= baseViewModels.length = ${baseViewModels.length}');
       },
       onError: (message) {
         errorMessage = message;
