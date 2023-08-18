@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_kit.dart';
 
-import 'package:bloc_template/bloc_template.dart' as bloc;
-import 'package:redux_template/redux_template.dart' as redux;
+import 'package:riverpod_template/riverpod_template.dart' as riverpod;
 import 'package:mobx_template/mobx_template.dart' as mobx;
+import 'package:redux_template/redux_template.dart' as redux;
+import 'package:bloc_template/bloc_template.dart' as bloc;
 
 class SelectManagementScreen extends StatelessWidget {
   static const routeName = "/select_management";
@@ -14,7 +15,7 @@ class SelectManagementScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final managementsMap = <String, VoidCallback>{
       'Provider': () {},
-      'Riverpod': () {},
+      'Riverpod': () => pushNamed(riverpod.PokedexScreen.route_name),
       'MobX': () => pushNamed(mobx.PokedexScreen.route_name),
       'Redux': () => pushNamed(redux.PokedexScreen.route_name),
       'Bloc': () => pushNamed(bloc.PokedexScreen.route_name),
@@ -26,7 +27,7 @@ class SelectManagementScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Выберите систему управления состоянием',
+              Strings.chooseManagementText,
               style: TextStyles.regularCustomSizeStyle(
                   fontWeight: FontWeight.w600),
               textAlign: TextAlign.center,

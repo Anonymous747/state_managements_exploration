@@ -40,7 +40,6 @@ abstract class _PokedexStore with Store {
     if (maxScrollExtent == pixels) {
       _offset += Constants.listLimitation;
 
-      print('========= pagination _offset = $_offset');
       _loadPokemons(limit: Constants.listLimitation, offset: _offset);
     }
   }
@@ -83,8 +82,6 @@ abstract class _PokedexStore with Store {
 
         final viewModels = _mapper.convertToViewModel(pokemons);
         baseViewModels = [...baseViewModels, ...viewModels];
-
-        print('========= baseViewModels.length = ${baseViewModels.length}');
       },
       onError: (message) {
         errorMessage = message;
