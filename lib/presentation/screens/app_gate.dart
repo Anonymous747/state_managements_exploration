@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:ui_kit/ui_kit.dart';
 import 'package:redux_template/redux_template.dart';
+
 import 'package:state_managements_exploration/common/common.dart';
 import 'package:state_managements_exploration/presentation/presentation.dart';
 
@@ -9,6 +11,8 @@ class AppGate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // This's required to initialize the redux
+    //
     return ReduxInitializerWrapper(
       child: MaterialApp(
         navigatorKey: navigatorKey,
@@ -19,6 +23,9 @@ class AppGate extends StatelessWidget {
         routes: appRoutes,
         initialRoute: SelectManagementScreen.routeName,
         onGenerateRoute: (route) {
+          // In this project, I almost simplify navigation,
+          // cuz makes it usable inside modules is a real challenge.
+          //
           if (appRoutes[route.name] == null) return null;
 
           final routeName = route.name;
