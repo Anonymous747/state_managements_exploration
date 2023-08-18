@@ -9,6 +9,8 @@ import 'package:path_provider/path_provider.dart' as pathProvider;
 
 final getIt = GetIt.instance;
 
+Box get pokemonBox => Hive.box(HiveBox.pokemonBox);
+
 T instanceOf<T extends Object>({
   String? instanceName,
   dynamic param1,
@@ -39,8 +41,8 @@ _initRepositories() {
   getIt.registerFactory<Client>(() => DioClient());
   getIt.registerFactory<PokemonRepository>(
       () => MainPokemonRepository(getIt.get()));
-  getIt.registerFactory<StoreRepository>(() =>
-      HiveStoreRepository<PokemonDataTdo>(box: Hive.box(HiveBox.pokemonBox)));
+  getIt.registerFactory<StoreRepository>(
+      () => HiveStoreRepository<PokemonDataTdo>(box: pokemonBox));
 }
 
 _initServices() {
