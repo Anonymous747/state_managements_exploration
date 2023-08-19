@@ -22,10 +22,19 @@ class PokedexScreen extends HookConsumerWidget {
           );
         }
 
+        final scrollListener =
+            ref.read(pokedexControllerProvider.notifier).paginationHandling;
+        final searchHandler =
+            ref.read(pokedexControllerProvider.notifier).searchHandling;
+
+        final isSearching = state.suitableForSearch.isNotEmpty;
+        final pokemons =
+            isSearching ? state.suitableForSearch : state.viewModels;
+
         return PokedexContainer(
-          pokemons: state.viewModels,
-          scrollListener: (_, __) {},
-          searchListener: (_) {},
+          pokemons: pokemons,
+          scrollListener: scrollListener,
+          searchListener: searchHandler,
           namedCellBuilder: ({required String name}) {
             return PokedexBody(name: name);
           },

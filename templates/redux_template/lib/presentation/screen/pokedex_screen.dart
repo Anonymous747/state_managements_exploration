@@ -15,12 +15,8 @@ class PokedexScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Palette.blue300,
       body: StoreConnector<AppState, _ViewModel>(
-          ignoreChange: (store) {
-            return store.pokedexState.isLoading;
-          },
-          onInitialBuild: (store) {
-            store.loadPokemons();
-          },
+          distinct: true,
+          onInitialBuild: (store) => store.loadPokemons(),
           converter: _ViewModel.fromStore,
           builder: (context, _ViewModel viewModel) {
             if (viewModel.isLoading) {

@@ -23,11 +23,9 @@ class _PokedexBodyState extends State<PokedexBody> {
         onInit: (store) {
           store.dispatch(loadPokemonCellThunk(name: widget.name));
         },
-        ignoreChange: (store) =>
-            store.pokemonCellState.viewModels[widget.name] == null,
+        distinct: true,
         converter: _ViewModel.fromStore,
         builder: (context, _ViewModel viewModel) {
-          print('========= build redux name = ${widget.name}');
           return GestureDetector(
             onTap: () => viewModel.navigateToStats(context, widget.name),
             child: PokemonCell(

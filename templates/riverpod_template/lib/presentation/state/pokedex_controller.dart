@@ -16,9 +16,17 @@ class PokedexController extends _$PokedexController {
 
   @override
   PokedexState build() {
+    _receivePokemons(offset: _offset);
+
+    return PokedexState(isLoading: true);
+  }
+
+  void _receivePokemons(
+      {int limit = Constants.listLimitation, int offset = 0}) {
     final service = ref.watch(pokemonServiceProvider);
+
     service.getPokemons(
-        limit: Constants.listLimitation,
+        limit: limit,
         offset: _offset,
         onSuccess: (response) {
           final pokemons = response.results;
@@ -38,17 +46,42 @@ class PokedexController extends _$PokedexController {
             viewModels: loadedPokemons,
           );
         },
-        onError: (errorMessage) {});
-
-    return PokedexState(isLoading: true);
+        onError: (errorMessage) {
+          state = state.copyWith(isLoading: false, errorMessage: errorMessage);
+        });
   }
 
-  void receivePokemons() {
-    // state = PokedexState(isLoading: false);
+  void paginationHandling(double maxScrollExtent, double pixels) {
+    if (state.suitableForSearch.isEmpty && maxScrollExtent == pixels) {
+      _offset += Constants.listLimitation;
 
-    final service = ref.watch(pokemonServiceProvider);
+      _receivePokemons(offset: _offset);
+    }
+  }
 
-    state = state.copyWith(isLoading: false);
-    // return state.copyWith(isLoading: false);
+  void searchHandling(String text) {
+    if (_timer != null) {
+      _timer!.cancel();
+    }
+
+    _timer = Timer(
+      const Duration(seconds: 2),
+      () => _searchPokemonByName(text),
+    );
+  }
+
+  void _searchPokemonByName(String text) {
+    if (text.isEmpty) {
+      state = state.copyWith(suitableForSearch: []);
+      return;
+    }
+
+    final searchFragment = text;
+
+    final filteredList = state.viewModels
+        .where((pokemon) => pokemon.name.contains(searchFragment))
+        .toList();
+
+    state = state.copyWith(suitableForSearch: filteredList);
   }
 }

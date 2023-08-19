@@ -44,6 +44,11 @@ class PokedexCubit extends Cubit<PokedexState> {
 
   void _searchPokemonByName(String text) {
     state.mapOrNull(loaded: (loadedState) {
+      if (text.isEmpty) {
+        emit(loadedState.copyWith(suitableForSearch: []));
+        return;
+      }
+
       final searchFragment = text;
 
       final filteredList = loadedState.viewModels

@@ -58,6 +58,11 @@ abstract class _PokedexStore with Store {
 
   @action
   void _searchPokemonByName(String text) {
+    if (text.isEmpty) {
+      suitableForSearch = [];
+      return;
+    }
+
     final searchFragment = text;
 
     final filteredList = baseViewModels
