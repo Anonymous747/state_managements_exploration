@@ -15,17 +15,14 @@ class PokedexBody extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ref.read(pokemonCellControllerProvider.notifier).loadPokemon(name);
 
-    final cellState = ref.watch(pokemonCellControllerProvider
-      ..select((value) => value.viewModels[name]));
-    final pokemon = cellState.viewModels[name];
-
-    print('========= build name = $name');
+    final viewModel = ref.watch(pokemonCellControllerProvider
+        .select((value) => value.viewModels[name]));
 
     return GestureDetector(
       onTap: () =>
-          cellState.isLoading ? null : navigateToStats(context, pokemon!),
+          viewModel == null ? null : navigateToStats(context, viewModel),
       child: PokemonCell(
-        pokemon: pokemon,
+        pokemon: viewModel,
         margin: const EdgeInsets.all(12),
       ),
     );
