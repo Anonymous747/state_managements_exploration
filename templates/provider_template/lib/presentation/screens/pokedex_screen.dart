@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:ui_kit/ui_kit.dart';
+import 'package:provider_template/presentation/presentation.dart';
 
 class PokedexScreen extends StatelessWidget {
   static const routeName = 'provider_pokedex';
@@ -8,15 +11,31 @@ class PokedexScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Palette.blue300,
-      body: PokedexContainer(
-        pokemons: [],
-        scrollListener: (s1, s2) {},
-        searchListener: (_) {},
-        namedCellBuilder: ({required String name}) {
-          return Container();
-        },
+    return ChangeNotifierProvider<PokedexProvider>(
+      create: (_) => instanceOf<PokedexProvider>(),
+      child: Scaffold(
+        backgroundColor: Palette.blue300,
+        body: Consumer<PokedexProvider>(builder: (context, pokedexRef, _) {
+          final state = pokedexRef.state;
+          final isSearching = state.suitableForSearch.isNotEmpty;
+          final pokemons =
+              isSearching ? state.suitableForSearch : state.viewModels;
+
+          return PokedexContainer(
+            pokemons: pokemons,
+            scrollListener: pokedexRef.paginationHandling,
+            searchListener: pokedexRef.searchHandling,
+            namedCellBuilder: ({required String name}) {
+              return ChangeNotifierProvider<PokemonCellProvider>(
+                create: (_) => instanceOf<PokemonCellProvider>(),
+                child: PokedexBody(
+                  key: ValueKey<String>(name),
+                  name: name,
+                ),
+              );
+            },
+          );
+        }),
       ),
     );
   }

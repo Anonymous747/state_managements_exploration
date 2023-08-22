@@ -15,11 +15,15 @@ dependencies:
     path: ../ui_kit
 
   provider: ^6.0.5
+  freezed_annotation: ^2.4.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
   flutter_lints: ^2.0.0
+  build_runner: ^2.4.6
+  freezed: ^2.4.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
