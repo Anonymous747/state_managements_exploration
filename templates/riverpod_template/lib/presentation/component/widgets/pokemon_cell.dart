@@ -3,10 +3,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_template/presentation/presentation.dart';
 import 'package:ui_kit/ui_kit.dart';
 
-class PokedexBody extends HookConsumerWidget {
+class PokemonCell extends HookConsumerWidget {
   final String name;
 
-  const PokedexBody({
+  const PokemonCell({
     required this.name,
     super.key,
   });
@@ -21,7 +21,7 @@ class PokedexBody extends HookConsumerWidget {
     return GestureDetector(
       onTap: () =>
           viewModel == null ? null : navigateToStats(context, viewModel),
-      child: PokemonCell(
+      child: PokemonCellContainer(
         pokemon: viewModel,
         margin: const EdgeInsets.all(12),
       ),

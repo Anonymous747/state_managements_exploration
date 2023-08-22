@@ -36,7 +36,7 @@ class PokedexScreen extends HookConsumerWidget {
           scrollListener: scrollListener,
           searchListener: searchHandler,
           namedCellBuilder: ({required String name}) {
-            return PokedexBody(name: name);
+            return PokemonCell(name: name);
           },
         );
       }),

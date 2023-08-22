@@ -9,7 +9,23 @@ class PokemonCellProvider extends ChangeNotifier {
 
   PokemonCellState state = PokemonCellState();
 
+  /// Need to define when widget was disposed
+  ///
+  bool _isDisposed = false;
+
+  /// Need to trigger listeners for widget rebuilding
+  ///
+  void _notifyListeners() {
+    if (!_isDisposed) {
+      notifyListeners();
+    }
+  }
+
   Future<void> loadPokemon(String name) async {
+    // When you list too low, so it's more optimal to cancel the
+    // download immediately
+    if (_isDisposed) return;
+
     final mapper = PokemonCellMapper();
 
     final dtoModel = await _storeRepository.get(name);
@@ -19,7 +35,7 @@ class PokemonCellProvider extends ChangeNotifier {
 
       state = state.copyWith(viewModel: viewModel);
 
-      notifyListeners();
+      _notifyListeners();
     } else {
       _pokemonService.getPokemonData(
           name: name,
@@ -31,14 +47,21 @@ class PokemonCellProvider extends ChangeNotifier {
 
             state = state.copyWith(viewModel: viewModel, isLoading: false);
 
-            notifyListeners();
+            _notifyListeners();
           },
           onError: (errorMessage) {
             state =
                 state.copyWith(isLoading: false, errorMessage: errorMessage);
 
-            notifyListeners();
+            _notifyListeners();
           });
     }
+  }
+
+  @override
+  void dispose() {
+    _isDisposed = true;
+
+    super.dispose();
   }
 }

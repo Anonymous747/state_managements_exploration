@@ -1,1 +1,1 @@
-export './pokedex_body.dart';
+export './pokemon_cell.dart';

@@ -4,19 +4,19 @@ import 'package:redux/redux.dart';
 import 'package:ui_kit/ui_kit.dart';
 import 'package:redux_template/presentation/presentation.dart';
 
-class PokedexBody extends StatefulWidget {
+class PokemonCell extends StatefulWidget {
   final String name;
 
-  const PokedexBody({
+  const PokemonCell({
     required this.name,
     Key? key,
   }) : super(key: key);
 
   @override
-  State<PokedexBody> createState() => _PokedexBodyState();
+  State<PokemonCell> createState() => _PokemonCellState();
 }
 
-class _PokedexBodyState extends State<PokedexBody> {
+class _PokemonCellState extends State<PokemonCell> {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, _ViewModel>(
@@ -28,7 +28,7 @@ class _PokedexBodyState extends State<PokedexBody> {
         builder: (context, _ViewModel viewModel) {
           return GestureDetector(
             onTap: () => viewModel.navigateToStats(context, widget.name),
-            child: PokemonCell(
+            child: PokemonCellContainer(
               pokemon: viewModel.viewModel[widget.name],
               margin: const EdgeInsets.all(12),
             ),

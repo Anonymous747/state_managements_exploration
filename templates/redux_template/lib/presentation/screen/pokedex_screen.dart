@@ -33,7 +33,7 @@ class PokedexScreen extends StatelessWidget {
               scrollListener: viewModel.onScrollListener,
               pokemons: pokemons,
               namedCellBuilder: ({required String name}) {
-                return PokedexBody(name: name);
+                return PokemonCell(name: name);
               },
             );
           }),

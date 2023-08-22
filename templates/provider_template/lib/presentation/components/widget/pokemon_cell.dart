@@ -4,19 +4,19 @@ import 'package:provider/provider.dart';
 import 'package:ui_kit/ui_kit.dart';
 import 'package:provider_template/presentation/presentation.dart';
 
-class PokedexBody extends StatefulWidget {
+class PokemonCell extends StatefulWidget {
   final String name;
 
-  const PokedexBody({
+  const PokemonCell({
     required this.name,
     Key? key,
   }) : super(key: key);
 
   @override
-  State<PokedexBody> createState() => _PokedexBodyState();
+  State<PokemonCell> createState() => _PokemonCellState();
 }
 
-class _PokedexBodyState extends State<PokedexBody> {
+class _PokemonCellState extends State<PokemonCell> {
   late PokemonCellProvider _cellProvider;
 
   @override
@@ -34,7 +34,7 @@ class _PokedexBodyState extends State<PokedexBody> {
     return Consumer<PokemonCellProvider>(builder: (context, pokemonCellRef, _) {
       final pokemon = pokemonCellRef.state.viewModel;
 
-      return PokemonCell(
+      return PokemonCellContainer(
         pokemon: pokemon,
         margin: const EdgeInsets.all(12),
       );

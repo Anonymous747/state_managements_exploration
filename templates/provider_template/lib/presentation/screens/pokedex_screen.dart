@@ -28,7 +28,7 @@ class PokedexScreen extends StatelessWidget {
             namedCellBuilder: ({required String name}) {
               return ChangeNotifierProvider<PokemonCellProvider>(
                 create: (_) => instanceOf<PokemonCellProvider>(),
-                child: PokedexBody(
+                child: PokemonCell(
                   key: ValueKey<String>(name),
                   name: name,
                 ),

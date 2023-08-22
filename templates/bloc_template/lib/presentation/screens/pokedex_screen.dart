@@ -38,7 +38,7 @@ class PokedexScreen extends StatelessWidget {
                     scrollListener: cubit.paginationHandling,
                     searchListener: cubit.searchHandling,
                     namedCellBuilder: ({required String name}) {
-                      return PokedexBody(
+                      return PokemonCell(
                         key: ValueKey<String>(name),
                         navigateToStats: navigateToStats,
                         name: name,

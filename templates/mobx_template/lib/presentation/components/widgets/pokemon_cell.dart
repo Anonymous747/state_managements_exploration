@@ -4,19 +4,19 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:ui_kit/ui_kit.dart';
 import 'package:mobx_template/presentation/presentation.dart';
 
-class PokedexBody extends StatefulWidget {
+class PokemonCell extends StatefulWidget {
   final String name;
 
-  const PokedexBody({
+  const PokemonCell({
     required this.name,
     Key? key,
   }) : super(key: key);
 
   @override
-  State<PokedexBody> createState() => _PokedexBodyState();
+  State<PokemonCell> createState() => _PokemonCellState();
 }
 
-class _PokedexBodyState extends State<PokedexBody> {
+class _PokemonCellState extends State<PokemonCell> {
   late final PokemonCellStore store;
 
   @override
@@ -42,7 +42,7 @@ class _PokedexBodyState extends State<PokedexBody> {
 
         return GestureDetector(
           onTap: () => isLoading ? null : navigateToStats(context, viewModel!),
-          child: PokemonCell(
+          child: PokemonCellContainer(
             pokemon: viewModel,
             margin: const EdgeInsets.all(12),
           ),

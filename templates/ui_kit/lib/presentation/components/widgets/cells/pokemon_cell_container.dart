@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:ui_kit/common/common.dart';
 import 'package:ui_kit/presentation/presentation.dart';
 
-class PokemonCell extends StatelessWidget {
+class PokemonCellContainer extends StatelessWidget {
   final PokemonViewModel? pokemon;
   final EdgeInsets? margin;
 
-  const PokemonCell({
+  const PokemonCellContainer({
     required this.pokemon,
     this.margin,
     Key? key,

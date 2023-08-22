@@ -31,7 +31,7 @@ class PokedexScreen extends StatelessWidget {
           scrollListener: store.paginationHandling,
           searchListener: store.searchHandling,
           namedCellBuilder: ({required String name}) {
-            return PokedexBody(
+            return PokemonCell(
               key: ValueKey(name),
               name: name,
             );
