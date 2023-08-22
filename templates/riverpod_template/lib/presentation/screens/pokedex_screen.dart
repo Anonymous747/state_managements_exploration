@@ -5,7 +5,7 @@ import 'package:ui_kit/ui_kit.dart';
 import 'package:riverpod_template/presentation/presentation.dart';
 
 class PokedexScreen extends HookConsumerWidget {
-  static const String route_name = 'riverpod_pokedex';
+  static const String routeName = 'riverpod_pokedex';
 
   const PokedexScreen({super.key});
 

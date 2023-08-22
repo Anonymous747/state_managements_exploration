@@ -6,7 +6,7 @@ import 'package:ui_kit/ui_kit.dart';
 import 'package:redux_template/presentation/presentation.dart';
 
 class PokedexScreen extends StatelessWidget {
-  static const route_name = 'redux_pokedex';
+  static const routeName = 'redux_pokedex';
 
   const PokedexScreen({Key? key}) : super(key: key);
 

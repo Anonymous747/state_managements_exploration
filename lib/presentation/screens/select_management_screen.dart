@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_kit.dart';
 
+import 'package:provider_template/provider_template.dart' as provider;
 import 'package:riverpod_template/riverpod_template.dart' as riverpod;
 import 'package:mobx_template/mobx_template.dart' as mobx;
 import 'package:redux_template/redux_template.dart' as redux;
@@ -14,11 +15,11 @@ class SelectManagementScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final managementsMap = <String, VoidCallback>{
-      'Provider': () {},
-      'Riverpod': () => pushNamed(riverpod.PokedexScreen.route_name),
-      'MobX': () => pushNamed(mobx.PokedexScreen.route_name),
-      'Redux': () => pushNamed(redux.PokedexScreen.route_name),
-      'Bloc': () => pushNamed(bloc.PokedexScreen.route_name),
+      'Provider': () => pushNamed(provider.PokedexScreen.routeName),
+      'Riverpod': () => pushNamed(riverpod.PokedexScreen.routeName),
+      'MobX': () => pushNamed(mobx.PokedexScreen.routeName),
+      'Redux': () => pushNamed(redux.PokedexScreen.routeName),
+      'Bloc': () => pushNamed(bloc.PokedexScreen.routeName),
     };
 
     return Scaffold(

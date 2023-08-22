@@ -4,7 +4,7 @@ import 'package:ui_kit/ui_kit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PokedexScreen extends StatelessWidget {
-  static const route_name = 'bloc_pokedex';
+  static const routeName = 'bloc_pokedex';
 
   const PokedexScreen({Key? key}) : super(key: key);
 

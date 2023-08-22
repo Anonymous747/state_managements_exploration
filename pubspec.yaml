@@ -10,6 +10,8 @@ dependencies:
     sdk: flutter
   ui_kit:
     path: ./templates/ui_kit
+  provider_template:
+    path: ./templates/provider_template
   riverpod_template:
     path: ./templates/riverpod_template
   mobx_template:

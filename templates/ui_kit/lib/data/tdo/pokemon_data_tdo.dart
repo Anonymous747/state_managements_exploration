@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:ui_kit/data/data.dart';
-import 'package:ui_kit/domain/domain.dart';
+import 'package:ui_kit/presentation/presentation.dart';
 
 part 'pokemon_data_tdo.g.dart';
 

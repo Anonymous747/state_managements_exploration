@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ui_kit/domain/view_models/index.dart';
+import 'package:ui_kit/presentation/presentation.dart';
 
 part 'pokemons_list_view_model.freezed.dart';
 

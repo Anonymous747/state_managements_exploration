@@ -1,4 +1,4 @@
-import 'package:ui_kit/domain/domain.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class PokemonCellLoadedAction {
   final Map<String, PokemonViewModel> viewModel;

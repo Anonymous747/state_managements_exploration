@@ -11,6 +11,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  ui_kit:
+    path: ../ui_kit
+
+  provider: ^6.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

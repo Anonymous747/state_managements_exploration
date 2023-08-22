@@ -1,4 +1,5 @@
 import 'package:ui_kit/domain/domain.dart';
+import 'package:ui_kit/presentation/presentation.dart';
 
 class PokedexMapper {
   /// It may be an extension on [PokemonModel], however it option is closer to me

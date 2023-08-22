@@ -5,7 +5,7 @@ import 'package:ui_kit/ui_kit.dart';
 import 'package:mobx_template/presentation/presentation.dart';
 
 class PokedexScreen extends StatelessWidget {
-  static const route_name = 'mobx_pokedex';
+  static const routeName = 'mobx_pokedex';
 
   const PokedexScreen({Key? key}) : super(key: key);
 

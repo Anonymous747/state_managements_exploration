@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_kit/domain/domain.dart';
+import 'package:ui_kit/presentation/presentation.dart';
 
 class PokemonsList extends StatelessWidget {
   final List<PokemonBaseViewModel> pokemons;
