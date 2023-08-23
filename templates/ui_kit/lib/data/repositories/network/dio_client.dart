@@ -1,7 +1,10 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
+
 import 'package:ui_kit/domain/domain.dart';
 
+/// Helps to gather general exception handling and to configure dio
+///
 class DioClient extends Client {
   DioClient()
       : _dio = Dio(
