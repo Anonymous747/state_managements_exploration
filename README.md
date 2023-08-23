@@ -85,7 +85,7 @@ Redux is a predictable state container pattern widely used in web and mobile app
 
 BLoC is an architecture pattern that separates the business logic from the UI layer. It involves creating "BLoC" classes that handle the state management and provide streams of data to the UI. The UI components (widgets) listen to these streams and update themselves accordingly. Libraries like `flutter_bloc` and `rxdart` can help implement the BLoC pattern.
 
-#Conclusion
+# Conclusion
 
 Choosing the right state management approach in Flutter based on the size of your project can be approached as follows:
 
