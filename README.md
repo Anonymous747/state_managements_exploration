@@ -55,10 +55,11 @@ The 3 main layers:
 
 # How Does It Works
 
-![Screenshot_1692782891](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/d6e5680c-f003-4ad4-a916-3c6739a7cdb9)
-![Screenshot_1692782912](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/e6bea447-4b3f-4cf3-a028-26e6383494a9)
-![Screenshot_1692782920](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/fa654452-ccae-467a-b4a7-518760bd10f4)
-![Screenshot_1692782925](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/08338f20-8601-411a-8060-91937cd597a8)
+![Screenshot_1692782889](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/50a574df-182c-4601-a854-f1fa0760e020)
+![Screenshot_1692782912](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/79efc2c9-d90b-4112-9ac1-d979a9606e15)
+![Screenshot_1692782920](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/d9a34608-521c-496d-a671-cac3b15419aa)
+![Screenshot_1692782925](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/7b03d63b-c8f8-4673-8d1a-7b69b87f4803)
+
 
 
 # Was inspired by experience, articles and course: 
