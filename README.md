@@ -53,6 +53,11 @@ The 3 main layers:
 - Presentation - changing your ViewModel and UI to reflect changes
 
 
+# How Does It Works
+
+![](assets/Demo.mp4)
+
+
 # Was inspired by experience, articles and course: 
 
 - https://habr.com/ru/articles/747062/
