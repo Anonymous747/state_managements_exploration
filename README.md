@@ -1,6 +1,6 @@
 # State Management Exploration App
 
-This is the example for anyone who wants to create Flutter mobile application using Provider, Riverpod, MobX, Redux or Bloc. 
+Are you looking to get started with one of the most popular state managements in Flutter? Don't know how to create a basic project setup? Or has your project become too confusing and you don't know how to resolve this? I suggest you take a look at this project. It was created as a set of templates that can be useful for the above questions, and just as a cheat sheet. So, feel free to get acquainted with it. I'll be very grateful for your comments and wishes.
 
 
 # Scheme
