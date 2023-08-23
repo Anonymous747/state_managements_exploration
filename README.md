@@ -61,7 +61,7 @@ The 3 main layers:
 ![Screenshot_1692782925](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/7b03d63b-c8f8-4673-8d1a-7b69b87f4803)
 
 
-# **setState() and StatefulWidget**: 
+# **setState() and StatefulWidget** (Vanilla Style): 
 
 For simple applications or small components, you can use the built-in `setState()` method with a `StatefulWidget`. This approach allows you to manage the state within the `State` class and trigger UI updates by calling `setState()` when the state changes. However, this approach can become difficult to manage for larger applications or when the state becomes more complex.
 
