@@ -55,7 +55,11 @@ The 3 main layers:
 
 # How Does It Works
 
-![](assets/Demo.mp4)
+![Screenshot_1692782889](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/50a574df-182c-4601-a854-f1fa0760e020)
+![Screenshot_1692782912](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/79efc2c9-d90b-4112-9ac1-d979a9606e15)
+![Screenshot_1692782920](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/d9a34608-521c-496d-a671-cac3b15419aa)
+![Screenshot_1692782925](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/7b03d63b-c8f8-4673-8d1a-7b69b87f4803)
+
 
 
 # Was inspired by experience, articles and course: 
