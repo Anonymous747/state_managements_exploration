@@ -1,6 +1,6 @@
 # State Management Exploration App
 
-This is the example for anyone that want to create Flutter mobile application using Provider, Riverpod, MobX, Redux or Bloc. 
+This is the example for anyone who wants to create Flutter mobile application using Provider, Riverpod, MobX, Redux or Bloc. 
 
 
 # Scheme
@@ -8,7 +8,6 @@ This is the example for anyone that want to create Flutter mobile application us
 This is a representation of how it works technically.
 
 ![](assets/state_managements_scheme.png)
-
 
 # Technology Stack
 
