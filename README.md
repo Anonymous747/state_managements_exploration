@@ -3,6 +3,13 @@
 This is the example for anyone that want to create Flutter mobile application using Provider, Riverpod, MobX, Redux or Bloc. 
 
 
+# Scheme
+
+This is a representation of how it works technically.
+
+![](assets/state_managements_scheme.png)
+
+
 # Technology Stack
 
 - [x] Flutter
@@ -45,7 +52,8 @@ The 3 main layers:
 - Presentation - changing your ViewModel and UI to reflect changes
 
 
-# Was inspired by articles: 
+# Was inspired by experience, articles and course: 
 
 - https://habr.com/ru/articles/747062/
+- https://markonovakovic.medium.com/clean-architecture-is-not-domain-data-presentation-e368d7ff8579
 - https://www.youtube.com/watch?v=v0of23TxIKc&list=PLQkwcJG4YTCTimTCpEL5FZgaWdIZQuB7m
