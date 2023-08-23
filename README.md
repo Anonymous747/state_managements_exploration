@@ -61,6 +61,25 @@ The 3 main layers:
 ![Screenshot_1692782925](https://github.com/Anonymous747/state_managements_exploration/assets/47688014/7b03d63b-c8f8-4673-8d1a-7b69b87f4803)
 
 
+# **setState() and StatefulWidget**: For simple applications or small components, you can use the built-in `setState()` method with a `StatefulWidget`. This approach allows you to manage the state within the `State` class and trigger UI updates by calling `setState()` when the state changes. However, this approach can become difficult to manage for larger applications or when the state becomes more complex.
+
+# **InheritedWidget and InheritedModel**: Flutter provides the `InheritedWidget` and `InheritedModel` classes for sharing data down the widget tree. These classes allow you to define a data container widget that holds the shared state and provide it to descendant widgets. Descendant widgets can access the shared state by using the `BuildContext` and `inheritFromWidgetOfExactType()` method. This approach is useful for sharing application-wide or theme-related data.
+
+# **Provider and Riverpod**: Provider and Riverpod are state management libraries that offer a simple and scalable way to manage state in Flutter applications. They rely on the concept of "providers" that hold and expose state to the UI. Providers can be hierarchical and can be accessed by descendant widgets using `Provider.of` or `Consumer` widgets. These libraries provide features like dependency injection, state listening, and lazy loading of dependencies.
+
+# **MobX**: MobX is a state management library that allows you to create observable objects. It automatically tracks and updates the UI components that depend on the observed state. MobX uses the concept of "observables," "actions," and "reactions" to manage and update the state. Libraries like `mobx` and `flutter_mobx` can be used for integrating MobX with Flutter.
+
+# **Redux**: Redux is a predictable state container pattern widely used in web and mobile applications. It separates the application state from the UI and provides a unidirectional data flow. Libraries like `redux` and `flutter_redux` can be used to implement Redux in Flutter applications.
+
+# **BLoC (Business Logic Component) pattern**: BLoC is an architecture pattern that separates the business logic from the UI layer. It involves creating "BLoC" classes that handle the state management and provide streams of data to the UI. The UI components (widgets) listen to these streams and update themselves accordingly. Libraries like `flutter_bloc` and `rxdart` can help implement the BLoC pattern.
+
+#Conclusion
+
+Choosing the right state management approach in Flutter based on the size of your project can be approached as follows:
+
+- **Small Projects**: For small projects with a limited number of screens and relatively simple state management requirements, using Flutter's built-in `setState` method or the `InheritedWidget` approach can be sufficient. These approaches are lightweight and straightforward, making them easier to implement and understand for smaller-scale applications.
+- **Medium-Sized Projects**: When your project grows in size and complexity, you may benefit from using state management libraries like `Provider` or `Riverpod`. These libraries offer more advanced features for managing state and can help you separate concerns and decouple components. They provide a balance between simplicity and functionality, making them suitable for medium-sized projects.
+- **Large Projects**: For large projects with complex state management needs, it's often recommended to use more robust architectures like `BLoC` or `Redux`. These patterns enforce a unidirectional data flow and provide a centralized store for managing the application state. They are particularly beneficial when multiple screens or components need to interact with shared state or when you require advanced state manipulation and side-effect management capabilities.
 
 # Was inspired by experience, articles and course: 
 
