@@ -16,7 +16,7 @@ class PokedexScreen extends StatelessWidget {
       backgroundColor: Palette.blue300,
       body: StoreConnector<AppState, _ViewModel>(
           distinct: true,
-          onInitialBuild: (store) => store.loadPokemons(),
+          onInitialBuild: (store) => store.initializePokemons(),
           converter: _ViewModel.fromStore,
           builder: (context, _ViewModel viewModel) {
             if (viewModel.isLoading) {
@@ -48,7 +48,7 @@ class _ViewModel {
   final bool isLoadMore;
   final String? errorMessage;
 
-  final VoidCallback loadPokemons;
+  final VoidCallback initializePokemons;
   final StringBuilder onSearchListener;
   final Function(double, double) onScrollListener;
 
@@ -58,7 +58,7 @@ class _ViewModel {
     required this.isLoading,
     required this.isLoadMore,
     required this.errorMessage,
-    required this.loadPokemons,
+    required this.initializePokemons,
     required this.onSearchListener,
     required this.onScrollListener,
   });
@@ -70,8 +70,12 @@ class _ViewModel {
       isLoading: store.state.pokedexState.isLoading,
       isLoadMore: store.state.pokedexState.isLoadMore,
       errorMessage: store.state.pokedexState.errorMessage,
-      loadPokemons: () {
-        store.dispatch(pokedexLoadThunk());
+      initializePokemons: () {
+        final needToInitialize = store.state.pokedexState.viewModels.isEmpty;
+
+        if (needToInitialize) {
+          store.dispatch(pokedexLoadThunk());
+        }
       },
       onSearchListener: (text) {
         store.dispatch(pokedexSearchThunk(text));

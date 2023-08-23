@@ -34,10 +34,21 @@ class _PokemonCellState extends State<PokemonCell> {
     return Consumer<PokemonCellProvider>(builder: (context, pokemonCellRef, _) {
       final pokemon = pokemonCellRef.state.viewModel;
 
-      return PokemonCellContainer(
-        pokemon: pokemon,
-        margin: const EdgeInsets.all(12),
+      return GestureDetector(
+        onTap: () =>
+            pokemon == null ? null : _navigateToStats(context, pokemon),
+        child: PokemonCellContainer(
+          pokemon: pokemon,
+          margin: const EdgeInsets.all(12),
+        ),
       );
     });
+  }
+
+  void _navigateToStats(BuildContext context, PokemonViewModel viewModel) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+          builder: (_) => PokemonStatsContainer(viewModel: viewModel)),
+    );
   }
 }
